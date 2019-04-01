@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: pink;
+	front-size: 30px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 40px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#boton1").click(function() {
+			$("p:lt(2)").addClass("rosa");
+
+		})
+		$("#boton2").click(function() {
+			$("p:gt(2)").addClass("verde");
+
+		})
+		$("#boton3").click(function() {
+			$("p:eq(2)").addClass("azul");
+
+		})
+
+	});
+</script>
+</head>
+<body>
+	<p>hola</p>
+	<p>hola</p>
+	<p>hola</p>
+	<p>hola</p>
+	<p>hola</p>
+	<input type="button" value="pulsar" id="boton1" />
+	<input type="button" value="pulsar" id="boton2" />
+	<input type="button" value="pulsar" id="boton3" />
+
+</body>
+</html>

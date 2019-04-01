@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: pink;
+	front-size: 30px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 40px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$("#boton1").click(function() {
+			var numero = parseInt(document.getElementById("numero").value);
+			//$("p:eq(" + numero + ")").addClass("rosa");
+			$($("p")[numero]).addClass("rosa");
+		})
+	});
+	
+</script>
+</head>
+<body>
+	<p>Esta</p>
+	<p>no</p>
+	<p>es</p>
+	<p>mi</p>
+	<p>vieja</p>
+	<p>yegua</p>
+	<p>gris</p>
+	<input type="text" id="numero" />
+	<input type="button" value="pulsame" id="boton1" />
+
+</body>
+</html>

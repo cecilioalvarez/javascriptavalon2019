@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function parrafos() {
+
+		var body = document.getElementById("cuerpo");
+		var filas = parseInt(document.getElementById("filas").value);
+		var columnas = parseInt(document.getElementById("columnas").value);
+
+		var table = document.createElement("table");
+
+		for (var i = 0; i <= filas; i++) {
+			var tr = document.createElement("tr");
+
+			for (var j = 0; j <= columnas; j++) {
+				var td = document.createElement("td");
+
+				td.innerHTML = "(" + i + "," + j + ")";
+				tr.appendChild(td);
+			}
+			table.appendChild(tr);
+		}
+		body.appendChild(table);
+
+	}
+</script>
+</head>
+<body id="cuerpo">
+	<p>
+		Filas <input type="text" id="filas" />
+	</p>
+	<p>
+		Columnas <input type="text" id="columnas" />
+	</p>
+	<input type="button" value="pulsame" onclick="parrafos()" />
+</body>
+</html>
