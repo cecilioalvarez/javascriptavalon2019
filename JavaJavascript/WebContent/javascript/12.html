@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+		function parrafos() {
+
+			var body = document.getElementById("cuerpo");
+			var table = document.createElement("table");
+			var numero = parseInt(document.getElementById("numero1").value);
+			console.log(numero);
+			for (var i = 0; i <= numero; i++) {
+				var fila = document.createElement("tr");
+
+				for (var j = 0; j < numero; j++) {
+					var celda = document.createElement("td");
+					celda.innerHTML = i.toString()+","+j.toString();
+					console.log(celda);
+					fila.appendChild(celda);
+				}	
+				table.appendChild(fila);
+			}
+			body.appendChild(table);
+		}
+	</script>
+</head>
+
+<body id="cuerpo">
+
+	Numero de tabla
+	<input type="number" id="numero1" />
+	<input type="button" value="Tabla" onclick="parrafos()" />
+</body>
+
+</html>

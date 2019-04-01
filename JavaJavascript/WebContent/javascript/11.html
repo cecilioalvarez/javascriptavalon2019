@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function parrafos() {
+
+		var body = document.getElementById("cuerpo");
+		var numero = parseInt(document.getElementById("numero1").value);
+		var numero2 = parseInt(document.getElementById("numero2").value);
+		var ul = document.createElement("ul");
+		body.appendChild(ul);
+		for (var i = 0; i < numero2; i++) {
+			var li = document.createElement("li");
+			res = i*numero;
+			li.innerHTML = numero+"x"+i+"="+res;
+			ul.appendChild(li);
+		}
+
+	}
+</script>
+</head>
+<body id="cuerpo">
+
+	Numero a multiplicar <input type="number" id="numero1" />
+	Numero de veces <input type="number" id="numero2" />
+	<input type="button" value="Parrafos" onclick="parrafos()" />
+</body>
+</html>

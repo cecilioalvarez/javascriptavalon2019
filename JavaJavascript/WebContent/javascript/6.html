@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function f1() {
+	var parrafo = document.getElementById("miparrafo");
+	var value1 = parseInt(document.getElementById("value1").value);
+	var value2 = parseInt(document.getElementById("value2").value);
+	var sum = value1+value2;
+	parrafo.innerHTML="La suma es:"+sum;
+}
+
+</script>
+</head>
+<body>
+
+<input type="number" id="value1">
+<input type="number" id="value2">
+<input type="button" value="Pulsar" onclick="f1()">
+
+<p id="miparrafo">
+</p>
+
+</body>
+</html>
