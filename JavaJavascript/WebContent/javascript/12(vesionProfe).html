@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function genera_tabla() {
+	  // Obtener la referencia del elemento body
+	  var body = document.getElementById("cuerpo");
+	  var filas = parseInt(document.getElementById("filas").value);
+	  var columnas = parseInt(document.getElementById("columnas").value);
+	 
+	  // Crea un elemento <table> y un elemento <tbody>
+	  var tabla   = document.createElement("table");
+	 
+	  // Crea las celdas
+	  for (var i = 0; i < filas; i++) {
+	    // Crea las hileras de la tabla
+	    var hilera = document.createElement("tr");
+	 
+	    for (var j = 0; j < columnas; j++) {
+	      // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+	      // texto sea el contenido de <td>, ubica el elemento <td> al final
+	      // de la hilera de la tabla
+	      var celda = document.createElement("td");
+	      celda.innerHTML = "celda en la fila "+i+", columna "+j;
+	      hilera.appendChild(celda);
+	    }
+	    tabla.appendChild(hilera);
+	  }
+	 
+	  // appends <table> into <body>
+	  
+	  body.appendChild(tabla);
+	}
+
+</script>
+</head>
+<body id="cuerpo">
+	Filas: <input type="text" id="filas"/>
+	Columnas: <input type="text" id="columnas"/>
+	<input type="button"  value="pulsame" onclick="genera_tabla()"/>
+</body>
+</html>

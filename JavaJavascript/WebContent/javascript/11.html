@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function parrafos(){
+		var body = document.getElementById("cuerpo");
+		var texto1 = document.getElementById("texto1");
+		
+		for (var i=0;i<11;i++){
+			var parrafo = document.createElement("p");
+			parrafo.innerHTML = texto1.value+" x "+i+ " = "+texto1.value*i;
+			body.appendChild(parrafo);
+			
+		}
+
+
+		
+		
+	}
+
+</script>
+</head>
+<body id="cuerpo">
+
+
+	<input type="text" id="texto1">
+
+	<input type="button"  value="pulsame" onclick="parrafos()"/>
+</body>
+</html>

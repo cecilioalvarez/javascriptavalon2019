@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function f1(){
+	var cajaTexto1 = parseInt(document.getElementById("cajaTexto1").value);
+	var cajaTexto2 = parseInt(document.getElementById("cajaTexto2").value);
+	var parrafo = document.getElementById("miparrafo");
+	parrafo.innerHTML=cajaTexto1+cajaTexto2;
+	alert(cajaTexto1+cajaTexto2)
+}
+</script>
+</head>
+<body>
+<p id="miparrafo">
+
+</p>
+<input type="text"  id="cajaTexto1"/>
+<input type="text"  id="cajaTexto2"/>
+<input type="button"  value="pulsame" onclick="f1()"/>
+</body>
+</html>

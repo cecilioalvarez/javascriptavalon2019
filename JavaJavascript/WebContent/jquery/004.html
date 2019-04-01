@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+function parrafos1(){
+	var numero = parseInt(document.getElementById("texto").value);
+	$("p:eq("+numero+")").css("color","green");
+}
+function parrafos2(){
+	var numero = parseInt(document.getElementById("texto").value);
+	$("p:eq("+numero+")").css("color","pink");
+}
+function parrafos3(){
+	var numero = parseInt(document.getElementById("texto").value);
+	$("p:eq("+numero+")").css("color","blue");
+}
+	
+
+</script>
+</head>
+<body>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<input type="text" id="texto"/>
+<input type="button"  value="verde" onclick="parrafos1()"/>
+<input type="button"  value="rosa" onclick="parrafos2()"/>
+<input type="button"  value="azul" onclick="parrafos3()"/>
+</body>
+</html>

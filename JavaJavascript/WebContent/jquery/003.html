@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	
+	$("#boton1").click(function(){
+		var numero = parseInt(document.getElementById("texto").value);
+		$("p:eq("+numero+")").addClass("verde"); //Se aplica a todos los parrafos	
+		
+	})
+	$("#boton2").click(function(){
+		var numero = parseInt(document.getElementById("texto").value);
+		$("p:eq("+numero+")").css("color","pink"); //Se aplica a todos los parrafos	
+
+	})
+	$("#boton3").click(function(){
+		var numero = parseInt(document.getElementById("texto").value);
+		$("p:eq("+numero+")").css("color","blue"); //Se aplica a todos los parrafos	
+	
+	})
+	
+	
+})
+
+</script>
+</head>
+<body>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<input type="text" id="texto"/>
+<input type="button" value="verde" id="boton1"/>
+<input type="button" value="rosa" id="boton2"/>
+<input type="button" value="azul" id="boton3"/>
+</body>
+</html>

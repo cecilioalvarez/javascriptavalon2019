@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#boton1").click(function(){
+		$("p").addClass("rosa"); //Se aplica a todos los parrafos	
+		//$("p:eq(2)").addClass("rosa"); //Se aplica solo al parrafo 2 (posicion 2)
+		//$("p:gt(2)").addClass("verde"); //Se aplica a partir del parrafo 2 (sin contar el mismo) en adelante
+		$("p span").addClass("verde");
+	})
+	
+	
+})
+
+</script>
+</head>
+<body>
+<p>hola caracola</p>
+<p>hola caracola</p>
+<p><span>hola caracola</span></p>
+<p>hola caracola</p>
+<p>hola caracola</p>
+
+<input type="button" value="pulsar" id="boton1"/>
+</body>
+</html>
