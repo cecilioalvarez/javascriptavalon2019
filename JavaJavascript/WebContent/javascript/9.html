@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+
+function f1() {
+
+	var body  = document.getElementById("cuerpo");
+	var caja1  = document.getElementById("caja1").value;
+	var numero = parseInt(caja1);
+
+// 	var p = document.createElement("p");
+//     p.innerHTML = document.getElementById("caja1").value;
+// 	body.appendChild(p);
+	
+
+	for(var i=1;i<=10; i++){
+		
+		
+		var p = document.createElement("p");
+		
+		p.innerHTML = numero +" * "+i+" = "+numero*i;
+		body.appendChild(p);
+	}
+	
+	
+}
+</script>
+
+
+</head>
+<body id="cuerpo">
+
+<input type="text" id ="caja1"/>
+
+<input type="button" value = "pulsame" onclick="f1()"/>
+</body>
+</html>

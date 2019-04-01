@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+
+.verde{
+color:green;
+front-size: 20px;
+padding:10px;
+}
+
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$("#boton1").click(function(){
+		//alert("has pulsado");
+		
+		//$("body").css("color","red");
+		$("p").addClass("verde");
+	})
+	
+	$("#boton2").click(function(){
+		//alert("has pulsado");
+		
+		$("body").css("color","blue");
+	})
+	
+	$("#boton3").click(function(){
+		//alert("has pulsado");
+		
+		$("body").css("color","green");
+	})
+})
+</script>
+</head>
+<body>
+<p>Hola mundo</p>
+
+<input type="button" value="Rojo" id ="boton1">
+<input type="button" value="Azul" id ="boton2">
+<input type="button" value="Verde" id ="boton3">
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+
+function f1() {
+	//una variable en javascript que aputna al parrafo que tiene ese id
+	//
+	var parrafo = document.getElementById("miparrafo");
+	console.log(parrafo.innerHTML);
+	
+	var cajaTexto  = document.getElementById("cajaTexto");
+	parrafo.innerHTML = cajaTexto.value;
+}
+</script>
+
+
+</head>
+<body>
+
+<p id="miparrafo"></p>
+
+<input type="text" id ="cajaTexto"/>
+<input type="button" value = "pulsame" onclick="f1()"/>
+</body>
+</html>

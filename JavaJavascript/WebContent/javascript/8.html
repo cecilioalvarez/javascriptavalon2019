@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+
+function f1() {
+	//una variable en javascript que aputna al parrafo que tiene ese id
+	//
+	//var parrafo = document.getElementById("miparrafo");
+	//console.log(parrafo.innerHTML);
+	
+	var num1  = parseInt(document.getElementById("caja1").value);
+	var body  = document.getElementById("cuerpo");
+	
+	for(var i=0;i<num1; i++){
+		var p = document.createElement("p");
+		p.innerHTML = i;
+		body.appendChild(p);
+	}
+	
+}
+</script>
+
+
+</head>
+<body id="cuerpo">
+
+
+<input type="text" id ="caja1"/>
+
+<input type="button" value = "pulsame" onclick="f1()"/>
+</body>
+</html>

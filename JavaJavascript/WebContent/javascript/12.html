@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function f1() {
+
+		var body = document.getElementById("cuerpo");
+		var caja1 = document.getElementById("caja1").value;
+		var caja2 = document.getElementById("caja2").value;
+		var num1 = parseInt(caja1);
+		var num2 = parseInt(caja2);
+
+		var tabla = document.createElement("table");
+
+		for (var i = 0; i < num1; i++) {
+
+			var columnas = document.createElement("tr");
+
+			for (var j = 0; j < num2; j++) {
+				var filas = document.createElement("td");
+
+				filas.innerHTML = i + " , " + j;
+				columnas.appendChild(filas);
+			}
+			tabla.appendChild(columnas);
+		}
+		body.appendChild(tabla);
+	}
+</script>
+
+
+</head>
+<body id="cuerpo">
+
+	<p>Filas:</p>
+	<input type="text" id="caja1" />
+	<p>Columnas:</p>
+	<input type="text" id="caja2" />
+	<br>
+	<input type="button" value="pulsame" onclick="f1()" />
+</body>
+</html>
