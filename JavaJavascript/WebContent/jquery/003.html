@@ -27,17 +27,17 @@ $(document).ready(function(){
 	
 	
 	$("#boton1").click(function(){
-		var numero = parseInt(document.getElementById("texto").value);
-		$("p:eq("+numero+")").addClass("verde"); //Se aplica a todos los parrafos	
+		var numero = parseInt($("#texto").val());
+		$("p:eq("+numero+")").css("color","green"); //Se aplica a todos los parrafos	
 		
 	})
 	$("#boton2").click(function(){
-		var numero = parseInt(document.getElementById("texto").value);
+		var numero = parseInt($("#texto").val());
 		$("p:eq("+numero+")").css("color","pink"); //Se aplica a todos los parrafos	
 
 	})
 	$("#boton3").click(function(){
-		var numero = parseInt(document.getElementById("texto").value);
+		var numero = parseInt($("#texto").val());
 		$("p:eq("+numero+")").css("color","blue"); //Se aplica a todos los parrafos	
 	
 	})

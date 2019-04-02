@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".botonMas").click(function(){
+		//alert("has pulsado");
+		
+// 		var texto = $(this).parent().prev().text();
+// 		$(this).parent().prevAll("td").css("background-color","red");
+// 		console.log("La nota es: "+texto);
+
+		var nodoTexto = $(this).parent().prev();
+		nodoTexto.text(parseInt(nodoTexto.text())+1);
+		
+	})
+	$(".botonMenos").click(function(){
+		
+		var nodoTexto = $(this).parent().prev().prev();
+		nodoTexto.text(parseInt(nodoTexto.text())-1);
+	})
+	$(".botonColor").click(function(){
+		
+		$(this).parent().parent().css("background-color","red");
+	})
+	$("tr").click(function(){
+		
+		$(this).css("background-color","red");
+	})
+	
+	
+})
+	
+
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>pedro</td>
+<td>5</td>
+<td><input type="button"  class="botonMas" value="+"/></td>
+<td><input type="button"  class="botonMenos" value="-"/></td>
+</tr>
+<tr>
+<td>ana</td>
+<td>5</td>
+<td><input type="button"  class="botonMas" value="+"/></td>
+<td><input type="button"  class="botonMenos" value="-"/></td>
+</tr>
+<tr>
+<td>miguel</td>
+<td>5</td>
+<td><input type="button"  class="botonMas" value="+"/></td>
+<td><input type="button"  class="botonMenos" value="-"/></td>
+</tr>
+<tr>
+<td>gema</td>
+<td>5</td>
+<td><input type="button"  class="botonMas" value="+"/></td>
+<td><input type="button"  class="botonMenos" value="-"/></td>
+</tr>
+</table>
+
+</body>
+</html>

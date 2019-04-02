@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#ajax").click(function(){
+		
+		$.get("../sumaAjax.jsp?numero1="+$("#caja1").val()+"&numero2="+$("#caja2").val(),function(datos){
+			$("body").append("<p>"+datos+"</p>")
+		})
+	})
+})
+
+</script>
+</head>
+<body>
+<input type ="text" id="caja1"/>
+<input type ="text" id="caja2"/>
+<input type="button" value="ajax" id="ajax"/>
+
+</body>
+</html>

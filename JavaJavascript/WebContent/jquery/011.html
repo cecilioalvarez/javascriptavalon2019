@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var maximo =0;
+	var minimo= 99999999;
+	//var $elementoMin;
+	var $elementoMax;
+	
+	$("#marcarNotas").click(function(){
+		
+	     $("tr").find("td:last").each(function(indice){
+	    	 console.log(indice);
+	    	 var valor = parseInt($(this).text());
+	    	 if (valor>maximo){
+	    		maximo = valor;
+	    	 	$elementoMax = $(this);
+	    	 }
+	    	 if (valor<minimo){
+		    		minimo = valor;
+		    	 }
+	     })
+	     
+	      $elementoMax.css("color","green");
+	      $("td:contains("+minimo+")").css("color","red"); //con este formato marcamos todas las notas
+	      		// minimas y no la primera que nos encontramos (quiza un modo mas correcto)
+	})
+	 
+	
+})
+
+</script>
+</head>
+<body>
+<table>
+
+<tr>
+<td>pedro</td><td>7</td>
+</tr>
+<tr>
+<td>angel</td><td>3</td>
+</tr>
+<tr>
+<td>victor</td><td>3</td>
+</tr>
+<tr>
+<td>sara</td><td>5</td>
+</tr>
+<tr>
+<td>gema</td><td>8</td>
+
+</tr>
+
+</table>
+<input type="button" id="marcarNotas" value="Notas Destacadas"/>
+
+
+</body>
+</html>

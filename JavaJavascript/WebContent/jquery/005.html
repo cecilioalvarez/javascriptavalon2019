@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#add").on("click", function(){
+	
+		  $("table").append("<tr><td>"+$("#nombre").val()+"</td><td>"+$("#edad").val()+"</td></tr>");
+		  
+		});
+})
+
+</script>
+</head>
+<body>
+
+<form>
+Nombre: <input type="text" name="nombre" id="nombre"/>
+Edad: <input type="text" name="edad" id="edad"/>
+<input type="button" value="pulsar" id="add"/>
+</form>
+
+<table>
+
+</table>
+
+</body>
+</html>

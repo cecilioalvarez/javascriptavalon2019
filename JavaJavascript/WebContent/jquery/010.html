@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.verde {
+color:green;
+font-size:20px;
+padding:10px;
+}
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+.azul {
+color:blue;
+font-size:25px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#ocultar").click(function(){
+		//$("img").slideUp();
+		$("img").fadeOut("slow");
+	})
+	$("#mostrar").click(function(){
+		//$("img").slideDown();
+		$("img").fadeIn("slow");
+	})
+	
+})
+
+</script>
+</head>
+<body>
+<img src="images.jpg">
+<input type="button" id="ocultar" value="ocultar"/>
+<input type="button" id="mostrar" value="mostrar"/>
+
+</body>
+</html>
