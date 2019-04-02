@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$(".botonp").click(function() {
+			var valor = parseInt($(this).parent().prev().text());
+			valor = valor + 1;
+			$(this).parent().prev().text(valor.toString());
+		})
+
+		$(".botonm").click(function() {
+			var valor = parseInt($(this).parent().prev().prev().text());
+			valor = valor - 1;
+			$(this).parent().prev().prev().text(valor.toString());
+		})
+		$("tr").click(function() {
+			$(this).css("background-color", "blue");	
+		})
+	})
+</script>
+
+</head>
+<body>
+	<table>
+
+		<tr>
+			<td>pedro</td>
+			<td>5</td>
+			<td><input type="button" class="botonp" value="+" /></td>
+			<td><input type="button" class="botonm" value="-" /></td>
+		</tr>
+
+		<tr>
+			<td>miguel</td>
+			<td>5</td>
+			<td><input type="button" class="botonp" value="+" /></td>
+			<td><input type="button" class="botonm" value="-" /></td>
+		</tr>
+
+		<tr>
+			<td>gemma</td>
+			<td>5</td>
+			<td><input type="button" class="botonp" value="+" /></td>
+			<td><input type="button" class="botonm" value="-" /></td>
+		</tr>
+
+	</table>
+
+</body>
+</html>

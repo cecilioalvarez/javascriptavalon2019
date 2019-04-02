@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.seleccionada {
+	background-color: grey;
+}
+
+table img{
+	width: 150px;
+	height: 150px;
+}
+
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.roja {
+	color: red;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("table img").mouseenter(function() {
+			$("#shower").attr("src", $(this).attr("src"));
+		})
+
+	})
+</script>
+
+</head>
+<body>
+	<table>
+
+		<tr>
+
+			<td><img src="imagen1.png"></td>
+			<td><img src="imagen2.jpg"></td>
+			<td><img src="imagen3.jpg"></td>
+			
+		</tr>
+
+	</table>
+
+	<p>Foto a mostrar</p>
+	<img id="shower"/>
+
+
+</body>
+</html>

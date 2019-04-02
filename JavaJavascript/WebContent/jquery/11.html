@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+table, td, th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th {
+	height: 50px;
+}
+
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#boton").click(function() {
+			var table = $("#tabla");
+			var tr = document.createElement("tr");
+			var td = document.createElement("td");
+			var td2 = document.createElement("td");
+
+			td.innerHTML = ($("#nombre")).val();
+			($("#nombre")).val("");
+			td2.innerHTML = ($("#apellidos")).val();
+			($("#apellidos")).val("");
+			tr.append(td);
+			tr.append(td2);
+			table.append(tr);
+
+		})
+	})
+</script>
+
+</head>
+<body>
+	<form>
+		<input type="text" name="nombre" id="nombre" /> <input type="text"
+			name="apellidos" id="apellidos" /> <input type="button" name="boton"
+			value="Pulse" id="boton" />
+	</form>
+	<br>
+	<br>
+
+	<table id="tabla">
+		<tr>
+			<td>Nombre</td>
+			<td>Apellidos</td>
+		</tr>
+	</table>
+
+</body>
+</html>

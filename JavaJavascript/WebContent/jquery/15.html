@@ -28,39 +28,24 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$("#boton1").click(function() {
-			$("p:eq("+($("#numero").val()-1)+")").addClass("rosa");
-			
+		$("#ocultar").click(function() {
+			$("img").slideDown();
 		})
+		
+		$("#mostrar").click(function() {
+			$("img").slideUp();
+		})
+		
 	})
 </script>
 
 </head>
 <body>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>
-		<span>Hola</span>
-	</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<p>Hola</p>
-	<input type="number" id="numero">
-	<input type="button" value="pulsar" id="boton1">
+
+	<input type="button" id="ocultar" value="ocultar" />
+	<input type="button" id="mostrar" value="mostrar" />
+
+	<img src="imagen1.png">
+
 </body>
 </html>

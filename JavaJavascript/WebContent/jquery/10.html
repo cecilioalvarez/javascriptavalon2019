@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.seleccionada {
+	background-color: grey;
+}
+
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		// pillara el input que haya en esa columna
+		$("table input").click(function() {
+			$(this).parent().parent().addClass("seleccionada");
+		})
+
+		$("#borrarSeleccion").click(function() {
+			$(".seleccionada").remove();
+		})
+
+	})
+</script>
+
+</head>
+<body>
+	<table>
+
+		<tr>
+			<td>pedro</td>
+			<td>5</td>
+			<td><input type="button" value="Seleccionar" /></td>
+		</tr>
+
+		<tr>
+			<td>miguel</td>
+			<td>5</td>
+			<td><input type="button" value="Seleccionar" /></td>
+		</tr>
+
+		<tr>
+			<td>gemma</td>
+			<td>5</td>
+			<td><input type="button" value="Seleccionar" /></td>
+		</tr>
+
+	</table>
+
+	<input type="button" id="borrarSeleccion" value="Borrar">
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.seleccionada {
+	background-color: grey;
+}
+
+table img {
+	width: 150px;
+	height: 150px;
+}
+
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.roja {
+	color: red;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#ajax").click(function() {
+
+			var numero1= $("#numero").val();
+			var numero2= $("#numero2").val();
+			var str = "../sumaAjax.jsp?numero1="+numero1+"&"+"numero2="+numero2;
+			$.get(str,function(datos){
+				$("#result").html(datos);
+			})
+			
+		})
+
+	})
+</script>
+
+</head>
+<body>
+
+<input type="text" id="numero" />
+<input type="text" id="numero2" />
+
+<input type="button" id="ajax" value="Ajax" />
+
+<p>El resultado es:<span id="result"></span></p>
+
+</body>
+</html>

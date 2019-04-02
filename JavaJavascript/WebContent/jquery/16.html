@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.seleccionada {
+	background-color: grey;
+}
+
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.roja {
+	color: red;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$(".botonp").click(function() {
+			var valor = parseInt($(this).parent().prev().text());
+			valor = valor + 1;
+			$(this).parent().prev().text(valor.toString());
+		})
+
+		$(".botonm").click(function() {
+			var valor = parseInt($(this).parent().prev().prev().text());
+			valor = valor - 1;
+			$(this).parent().prev().prev().text(valor.toString());
+		})
+
+		$("#boton").click(function() {
+			var max = 0;
+			var min = 10000;
+			var maxTD = null;
+			var minTD = null;
+			$("tr").find("td:eq(1)").each(function() {
+				// Quitamos la clase que tenía, 
+				// para que no haya varios con el mismo valor.
+				$(this).removeClass();
+				var num = parseInt($(this).text());
+				if (num > max) {
+					max = num;
+					maxTD = $(this);
+				}
+				if (min > num) {
+					min = num;
+					minTD = $(this);
+				}
+			})
+			maxTD.addClass("azul");
+			minTD.addClass("roja");
+		})
+
+	})
+</script>
+
+</head>
+<body>
+	<table>
+
+		<tr>
+			<td>pedro</td>
+			<td>8</td>
+			<td><input type="button" class="botonp" value="+" /></td>
+			<td><input type="button" class="botonm" value="-" /></td>
+
+		</tr>
+
+		<tr>
+			<td>miguel</td>
+			<td>4</td>
+			<td><input type="button" class="botonp" value="+" /></td>
+			<td><input type="button" class="botonm" value="-" /></td>
+
+		</tr>
+
+		<tr>
+			<td>gemma</td>
+			<td>3</td>
+			<td><input type="button" class="botonp" value="+" /></td>
+			<td><input type="button" class="botonm" value="-" /></td>
+
+		</tr>
+
+	</table>
+
+	<input type="button" id="boton" value="Extremizar">
+
+</body>
+</html>
