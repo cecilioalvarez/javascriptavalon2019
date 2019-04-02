@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+
+
+
+
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+	
+		$("#ajax").click(function() {
+			
+			var num1 = $("#numero1").val();
+			var num2 = $("#numero2").val();
+	
+			
+			$.get("../sumaAjax.jsp?numero1="+num1+"&numero2="+num2+"", function(datos){
+				
+				console.log(datos);
+				$("body").append(datos);
+			});
+			
+
+		})
+			
+
+	})
+</script>
+</head>
+<body>
+
+
+	
+<div>
+<input type="text" name="numero1" id="numero1"/>
+<input type="text" name="numero2" id="numero2"/>
+<input type="button" id="ajax" value="ajax"/>
+</div>
+</body>
+</html>

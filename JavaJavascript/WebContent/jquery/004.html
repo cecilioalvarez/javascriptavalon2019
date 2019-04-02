@@ -31,68 +31,73 @@ padding:10px;
 <script type="text/javascript">
 
 $(document).ready(function(){
-
 	
 	
-	
-	$("#boton1").click(function(){
-	var numero = parseInt(document.getElementById("posicion").value);
-	$("p:eq("+numero+")").css("color","orange");
-	
-	//var parrafo = $("#posicion").val();
-		//alert($("#posicion").val());
+		$(".boton").click(function(){
+			alert("has pulsado");
+			//console.log($(this).val());
+			//console.log($(this).parent().parent());
+			//console.log($(this).parent().html());
+			var texto = $(this).parent().prev().text();
+			$(this).parent().prevAll("td").css("background-color","red");
+			console.log("el texto es: "+texto);
 			
-		//alert(parrafo);
-		//alert("has pulsado");
+		})
 		
-		//$("body").css("color","red");
-		//$("p").addClass("verde");
-		//$("p:eq(2)").addClass("verde");
-		//$("p").addClass("rosa");
-		//$("p:gt(2)").addClass("azul");
-		//$("p span").addClass("verde");
-		//$("p span:eq(1)").addClass("rosa");
-		//$("p").css("color", "orange");
-		//$("p:eq('"+parrafo+"')").addClass("verde");
-	})
-	
+		//SUMA 1 A LA PRIMERA POSICION ENCIMA DEL PADRE
+		$(".botonSuma").click(function(){
+			
+			var nodoTexto=$(this).parent().prev();
+			nodoTexto.text(parseInt(nodoTexto.text())+1);
+		})
 		
-	$("#boton2").click(function(){
-		var parrafo = $("#posicion").val();
-		//alert(alert($("#posicion").val()));
-	$("p:eq("+parrafo+")").addClass("verde");
-	
-	//var parrafo = $("#posicion").val;
-		//alert($("#posicion").val());
-		
-		
-		//alert(parrafo);
-		//alert("has pulsado");
-		
-		//$("body").css("color","red");
-		//$("p").addClass("verde");
-		//$("p:eq(2)").addClass("verde");
-		//$("p").addClass("rosa");
-		//$("p:gt(2)").addClass("azul");
-		//$("p span").addClass("verde");
-		//$("p span:eq(1)").addClass("rosa");
-		//$("p").css("color", "orange");
-		
-	})
+		//RESTA 1 A LAS DOS POSICIONES ENCIMA DEL PADRE
+		$(".botonResta").click(function(){
+			
+			var nodoTexto=$(this).parent().prev().prev();
+			nodoTexto.text(parseInt(nodoTexto.text())-1);
+		})
 	
 
+	//PONE DE COLOR ROJO EL tr SELECCIONADO		
+	$("tr").click(function(){
+	
+		$(this).css("background-color","red");
+		
+	})
 })
 </script>
 </head>
 <body>
-<p>Hola mundo</p>
-<p><span>Hola mundo</span></p>
-<p><span>Hola mundo</span></p>
-<p>Hola mundo</p>
-<p>Hola mundo</p>
-<p>Hola mundo</p>
-<input type="text" id ="posicion"><br>
-<input type="button" value="javaScript_Naranja" id ="boton1">
-<input type="button" value="jQuery_Verde" id ="boton2">
+<table>
+<tr>
+<td>Pedro</td>
+<td>5</td>
+<td><input type="button" class="botonSuma" value="+"/></td>
+<td><input type="button" class="botonResta" value="-"/></td>
+</tr>
+
+<tr>
+<td>Ana</td>
+<td>5</td>
+<td><input type="button" class="botonSuma" value="+"/></td>
+<td><input type="button" class="botonResta" value="-"/></td>
+</tr>
+
+<tr>
+<td>Miguel</td>
+<td>5</td>
+<td><input type="button" class="botonSuma" value="+"/></td>
+<td><input type="button" class="botonResta" value="-"/></td>
+</tr>
+
+<tr>
+<td>Gema</td>
+<td>5</td>
+<td><input type="button" class="botonSuma" value="+"/></td>
+<td><input type="button" class="botonResta" value="-"/></td>
+</tr>
+
+</table>
 </body>
 </html>

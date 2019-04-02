@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	background-color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	background-color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+		
+		$("#masDestacado").click(function() {
+
+		
+			
+			var mayor=0;
+			var $elemento;
+			
+			$( "tr").find("td:last" ).each(function( index ) {
+				  console.log( index + ": " + $( this ).text() );
+				  
+				  if(parseInt($(this).text())> mayor){
+					  mayor=parseInt($(this).text());
+					  $elemento=$(this);
+				  }
+				  
+				});
+			
+			console.log("mayor"+ mayor);
+			//$("tr:eq("+index+")").addClass("verde");
+			
+			$elemento.css("color","red");
+		})
+
+	
+		$("#menosDestacado").click(function() {
+
+
+			var menor=0;
+			menor =$("tr td:eq(1)").text();
+			//alert(menor);
+			var $elemento;
+			
+			$( "tr").find("td:last" ).each(function( index ) {
+				  console.log( index + ": " + $( this ).text() );
+				  
+				  if(parseInt($(this).text())< menor){
+					  menor=parseInt($(this).text());
+					  $elemento=$(this);
+				  }
+				  
+				});
+			
+			console.log("menor"+ menor);
+			
+			$elemento.css("color","blue");
+		})
+
+	})
+</script>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>Pedro</td>
+			<td>7</td>
+		</tr>
+
+		<tr>
+			<td>Angel</td>
+			<td>5</td>
+		</tr>
+
+		<tr>
+			<td>Gema</td>
+			<td>8</td>
+		</tr>
+
+		<tr>
+			<td>Sara</td>
+			<td>2</td>
+		</tr>
+	</table>
+
+
+	<input type="button" id="masDestacado" value="Mas destacado" />
+	<input type="button" id="menosDestacado" value="Menos destacado" />
+
+</body>
+</html>

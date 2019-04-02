@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+
+.verde{
+color:green;
+front-size: 20px;
+padding:10px;
+}
+
+.rosa{
+color:red;
+front-size: 20px;
+padding:10px;
+}
+
+.azul{
+color: blue;
+front-size: 20px;
+padding:10px;
+}
+
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	
+	//AÑADIMOS A LA TABLA DATOS
+		$("#botonAddTabla").click(function(){
+	
+		var nombre =$("#nombre").val();
+		var edad = $("#edad").val();
+		
+		$("table").append("<tr><td>"+nombre+"</td><td>"+edad+"</td></tr>")
+		
+		
+	})			
+	
+})
+</script>
+</head>
+<body>
+
+<table>
+</table>
+
+
+<form>
+<p>Nombre: </p><input type="text" name ="nombre" id="nombre"/>
+<p>Edad: </p><input type="text" name ="edad" id="edad"/>
+<input type="button" value="add" id="botonAddTabla" />
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+		
+		$("#ocultar").click(function() {
+
+			
+			//$("img").hide();
+			//$("img").slideUp();
+			$("img").fadeOut("slow");
+
+		})
+		
+			$("#mostrar").click(function() {
+
+				//$("img").show();
+				//$("img").slideDown();
+				$("img").fadeIn("slow");
+		})
+
+		
+
+	})
+</script>
+</head>
+<body>
+
+	<img src="Gatos_3.jpg"/>
+
+
+	<input type="button" id="ocultar" value="ocultar" />
+
+	<input type="button" id="mostrar" value="mostrar" />
+</body>
+</html>

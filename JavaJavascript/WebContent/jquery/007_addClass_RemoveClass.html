@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+		//AÑADIR CLASE
+		$("table input").click(function() {
+
+			console.log("hola mundo");
+			$(this).parent().parent().addClass("seleccionada");
+
+		})
+
+		//ELIMINAR CLASE
+		$("#borrarSeleccion").click(function() {
+
+			$(".seleccionada").remove();
+
+		})
+
+	})
+</script>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>Pedro</td>
+			<td>5</td>
+			<td><input type="button" value="seleccionar" /></td>
+		</tr>
+
+		<tr>
+			<td>Angel</td>
+			<td>5</td>
+			<td><input type="button" value="seleccionar" /></td>
+		</tr>
+
+		<tr>
+			<td>Gema</td>
+			<td>5</td>
+			<td><input type="button" value="seleccionar" /></td>
+		</tr>
+
+		<tr>
+			<td>Sara</td>
+			<td>5</td>
+			<td><input type="button" value="seleccionar" /></td>
+		</tr>
+	</table>
+
+
+	<input type="button" id="borrarSeleccion" value="borrar" />
+
+</body>
+</html>

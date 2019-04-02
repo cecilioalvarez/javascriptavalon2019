@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+
+.verde{
+color:green;
+front-size: 20px;
+padding:10px;
+}
+
+.rosa{
+color:red;
+front-size: 20px;
+padding:10px;
+}
+
+.azul{
+color: blue;
+front-size: 20px;
+padding:10px;
+}
+
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	
+	
+	
+	$("#boton1").click(function(){
+	var numero = parseInt(document.getElementById("posicion").value)-1;
+	$("p:eq("+numero+")").css("color","orange");
+	
+	//var parrafo = $("#posicion").val();
+		//alert($("#posicion").val());
+			
+		//alert(parrafo);
+		//alert("has pulsado");
+		
+		//$("body").css("color","red");
+		//$("p").addClass("verde");
+		//$("p:eq(2)").addClass("verde");
+		//$("p").addClass("rosa");
+		//$("p:gt(2)").addClass("azul");
+		//$("p span").addClass("verde");
+		//$("p span:eq(1)").addClass("rosa");
+		//$("p").css("color", "orange");
+		//$("p:eq('"+parrafo+"')").addClass("verde");
+	})
+	
+		
+	$("#boton2").click(function(){
+		var parrafo = $("#posicion").val()-1;
+		//alert(alert($("#posicion").val()));
+	$("p:eq("+parrafo+")").addClass("verde");
+	
+	//var parrafo = $("#posicion").val;
+		//alert($("#posicion").val());
+		
+		
+		//alert(parrafo);
+		//alert("has pulsado");
+		
+		//$("body").css("color","red");
+		//$("p").addClass("verde");
+		//$("p:eq(2)").addClass("verde");
+		//$("p").addClass("rosa");
+		//$("p:gt(2)").addClass("azul");
+		//$("p span").addClass("verde");
+		//$("p span:eq(1)").addClass("rosa");
+		//$("p").css("color", "orange");
+		
+	})
+	
+
+})
+</script>
+</head>
+<body>
+<p>Hola mundo</p>
+<p><span>Hola mundo</span></p>
+<p><span>Hola mundo</span></p>
+<p>Hola mundo</p>
+<p>Hola mundo</p>
+<p>Hola mundo</p>
+<input type="text" id ="posicion"><br>
+<input type="button" value="javaScript_Naranja" id ="boton1">
+<input type="button" value="jQuery_Verde" id ="boton2">
+</body>
+</html>
