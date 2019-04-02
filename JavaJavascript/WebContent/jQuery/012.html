@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.baja {
+	background-color: red;
+}
+
+.alta {
+	background-color: green;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		var maximo = 0;
+		var $elemento;
+		$("#seleccionar").click(function() {
+			$("tr").find("td:last").each(function(indice) {
+				var valor = parseInt($(this).text());
+				if (valor > maximo) {
+					maximo=valor;
+					$elemento = $(this);
+				}
+			})
+			$elemento.addClass("alta");
+		})
+	});
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>Alumno</td>
+			<td>Nota</td>
+		</tr>
+		<tr>
+			<td>Pedro</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Angel</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>Gema</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>Sara</td>
+			<td>1</td>
+		</tr>
+	</table>
+
+	<input type="button" id="seleccionar" value="Mostrar Destacados" />
+</body>
+</html>

@@ -27,9 +27,9 @@
 
 	$(document).ready(function() {
 		$("#boton1").click(function() {
-			var numero = parseInt(document.getElementById("numero").value);
+			var numero = parseInt($("#numero").val())-1);
 			//$("p:eq(" + numero + ")").addClass("rosa");
-			$($("p")[numero]).addClass("rosa");
+			$($("p:eq("+numero+")").addClass("rosa");
 		})
 	});
 	
