@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+.rosa{
+color:pink;
+font-size:40px;
+podding:10px;
+}
+.seleccionada{
+background-color:pink;
+}
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	$("#ocultar").click(function(){
+		//$("img").slideUp();
+		$("img").fadeOut("slow");
+		
+	})
+	$("#mostrar").click(function(){
+		//$("img").slideDown();
+		$("img").fadeIn("slow");
+	})
+})
+
+</script>
+</head>
+<body>
+
+<table>
+
+<img src="imagen1.jpeg"/>
+
+</table>
+
+<input type="button" id="ocultar" value="ocultar"/>
+<input type="button" id="mostrar" value="mostrar"/>
+
+</body>
+</html>

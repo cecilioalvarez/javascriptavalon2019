@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+.rosa{
+color:pink;
+font-size:40px;
+podding:10px;
+}
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	$("#boton1").click(function(){
+		var nombre=$("#nombre").val();
+		var edad=$("#edad").val();
+		
+		$("table").append("<tr><td>"+nombre+"</td><td>"+edad+"</td></tr>");
+		
+	})
+})
+
+
+</script>
+</head>
+<body>
+
+<table>
+</table>
+
+<form>
+Nombre: <input type="text" name="nombre" id="nombre"/>
+Edad: <input type="text"name="edad" id="edad"/>
+<input type="button" value="pulsar" id="boton1"/>
+</form>
+</body>
+</html>

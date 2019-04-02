@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+.rosa{
+color:pink;
+font-size:40px;
+podding:10px;
+}
+
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	$("tr").click(function(){
+	$(this).css("background-color","pink");
+	})
+})
+$(document).ready(function(){
+	$(".boton").click(function(){
+		//alert("has pulsado");
+		
+		//var texto=$(this).parent().prev().text();
+		//$(this).parent().prevAll("td").css("background-color","pink");
+		//console.log("el texto es: "+texto);
+		
+		var nodoTexto=$(this).parent().prev();
+		nodoTexto.text(parseInt(nodoTexto.text())+1);
+	})
+})
+$(document).ready(function(){
+	$(".boton2").click(function(){	
+		var nodoTexto2=$(this).parent().prev().prev();
+		nodoTexto2.text(parseInt(nodoTexto2.text())-1);
+	})
+})
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>pedro</td>
+<td>5</td>
+<td><input type="button" class="boton" value="+"/></td>
+<td><input type="button" class="boton2" value="-"/></td>
+</tr>
+<tr>
+<td>ana</td>
+<td>5</td>
+<td><input type="button" class="boton" value="+"/></td>
+<td><input type="button" class="boton2" value="-"/></td>
+</tr>
+<tr>
+<td>miguel</td>
+<td>5</td>
+<td><input type="button" class="boton" value="+"/></td>
+<td><input type="button" class="boton2" value="-"/></td>
+</tr>
+<tr>
+<td>gema</td>
+<td>5</td>
+<td><input type="button" class="boton" value="+"/></td>
+<td><input type="button" class="boton2" value="-"/></td>
+</tr>
+</table>
+
+
+<input type="button" value="pulsar" id="boton1"/>
+
+</body>
+</html>

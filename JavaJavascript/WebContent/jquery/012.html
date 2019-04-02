@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$(".imagenes").click(function(){
+		$("#principal").attr("src",$(this).attr("src"));
+	})
+})
+
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td><img class="imagenes" src="imagen1.jpeg" style="width:100px"/></td>
+<td><img class="imagenes" src="imagen5.jpg"style="width:100px"/></td>
+<td><img class="imagenes" src="imagen7.jpg"style="width:100px"/></td>
+<td><img class="imagenes" src="imagen8.jpg"style="width:100px"/></td>
+</tr>
+</table>
+<img id="principal" style="width:500px"/>
+
+</body>
+</html>

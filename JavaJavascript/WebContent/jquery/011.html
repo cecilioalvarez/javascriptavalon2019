@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+.rosa{
+color:pink;
+font-size:40px;
+podding:10px;
+}
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	$("tr").click(function(){
+	$(this).css("background-color","pink");
+	})
+})
+$(document).ready(function(){
+			
+		var maximo=0;
+		var $elemento;
+		$("#seleccionar").click(function(){
+		$("tr").find ("td:last").each(function(indice){
+		
+		console.log(indice);
+		var valor=parseInt($(this).text());
+		
+		if (valor>maximo){
+			maximo= valor;
+			$elemento=$(this);
+		}
+	})
+	$elemento.css("color","pink");
+		
+		
+	    })
+		})
+
+	
+
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>pedro</td><td>5</td>
+</tr>
+<tr>
+<td>ana</td><td>4</td>
+</tr>
+<tr>
+<td>miguel</td><td>6</td>
+</tr>
+<tr>
+<td>gema</td><td>2</td>
+</tr>
+</table>
+
+<input type="button" value="seleccionar" id="seleccionar"/>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function crearTabla(){
+	
+	var fil=parseInt(document.getElementById("fila").value);
+	var col=parseInt(document.getElementById("columna").value);
+	var body=document.getElementById("cuerpo");
+	
+	var tabla = document.createElement("table");
+	for (var i=0;i<fil;i++){
+		
+	var tr=document.createElement("tr");
+	for (var j=0;j<col;j++){
+	var td=document.createElement("td");
+	td.innerHTML=i+" , "+j;
+	tr.appendChild(td);
+	}
+	tabla.appendChild(tr);
+}
+body.appendChild(tabla);
+
+}
+</script>
+</head>
+<body id="cuerpo">
+<p>
+Filas: <input type="text" id="fila"/>
+</p>
+<p>
+Columnas: <input type="text" id="columna"/>
+</p>
+<input type="button" value="pulsame" onclick="crearTabla()"/>
+</body>
+</html>

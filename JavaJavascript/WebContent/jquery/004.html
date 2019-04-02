@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.verde{
+color:green;
+font-size:20px;
+podding:10px;
+}
+.rosa{
+color:pink;
+font-size:40px;
+podding:10px;
+}
+.azul{
+color:blue;
+font-size:50px;
+podding:10px;
+}
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#boton1").click(function(){
+		
+		$("p").addClass("rosa"); //eq pinta el de la posicion gt a partir de esa posicion
+		$("p:gt(3)").addClass("azul"); 
+		$("p").css("color","orange"); 
+		
+	
+})
+})
+
+</script>
+</head>
+<body>
+<p> hola </p>
+<p> hola </p>
+<p> hola </p>
+<p> hola </p>
+<p> hola </p>
+<p> hola </p>
+<p> hola </p>
+<input type="button" value="pulsar" id="boton1"/>
+
+</body>
+</html>
