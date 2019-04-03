@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+		
+		var promesa=$.get("../ListaLibros6.jsp"); //promesa variable que tiene un valor para siempre
+		
+		promesa.then(function(datos){
+			var datos=JSON.parse(datos.trim());
+			for(var i=0; i<datos.length; i++){
+				$("body").append("<p>"+datos[i].titulo+","+datos[i].autor+","+datos[i].pagina+"<p>");
+			
+			
+		})
+
+	})	
+			
+})
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
