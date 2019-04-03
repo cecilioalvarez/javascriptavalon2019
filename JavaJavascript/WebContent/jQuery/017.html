@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#filtro").keyup(function(){
+		var titulo=$("#filtro").val();
+		$.get("../ListaLibros3.jsp?filtro="+titulo,function(datos){
+			$("p").remove();
+			console.log(datos.trim());
+			var datos=JSON.parse(datos.trim());
+			for(var i=0;i<datos.length;i++){
+				$("body").append("<p>"+datos[i].titulo+","+datos[i].autor+","+datos[i].paginas+"</p>");
+			}
+		})
+	})
+});
+	
+</script>
+</head>
+<body>
+	<form>
+		Nombre Titulo:<input type="text" name="titulo" id="filtro" />
+		<input type="button" value="ajax" id="ajax"/>
+	</form>
+
+</body>
+</html>
