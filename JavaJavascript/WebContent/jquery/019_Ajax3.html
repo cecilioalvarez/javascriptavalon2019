@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+
+				
+
+				$("#ajax").click(
+						function() {
+							
+							var promesa =$.get("../ListaLibros4.jsp");
+							var promesa2 =$.get("../ListaLibros5.jsp");
+							console.log(promesa);
+							
+							
+							//CUANDO LA PROMESA FINALIZA
+// 					promesa.then(function(datos){
+									
+
+// 							console.log(datos);
+
+// 							var datos = JSON.parse(datos.trim());
+
+// 							console.log(datos);
+
+// 							for (var i = 0; i < datos.length; i++) {
+// 								$("body")
+// 										.append(
+// 												"<p>" + datos[i].titulo
+// 														+ ", "
+// 														+ datos[i].autor
+// 														+ ", "
+// 														+ datos[i].paginas
+// 														+ "</p>");
+// 							}
+
+		
+					
+						
+// 					})
+					
+					//CUANDO SE PROCESE LA PRIMERA Y SE HAYA PORCESADO LA SEGUNDA
+					$.when(promesa,promesa2).then(function(datos,datos2){
+						console.log("1) "+datos);
+						console.log(datos2);
+						var datos = JSON.parse(datos[0].trim());
+						console.log("2) "+datos);
+						
+						for (var i = 0; i < datos.length; i++) {
+								$("body")
+										.append(
+												"<p>" + datos[i].titulo
+														+ ", "
+														+ datos[i].autor
+														+ ", "
+														+ datos[i].paginas
+														+ "</p>");
+							}
+						
+						
+						var datos2 = JSON.parse(datos2[0].trim());
+						console.log(datos2);
+						
+						for (var i = 0; i < datos2.length; i++) {
+								$("body")
+										.append(
+												"<p>" + datos2[i].titulo
+														+ ", "
+														+ datos2[i].autor
+														+ ", "
+														+ datos2[i].paginas
+														+ "</p>");
+							}
+						
+									
+						
+						
+						
+					})
+					
+
+						})
+			})
+			
+</script>
+</head>
+<body>
+
+
+
+	<div>
+
+		<input type="button" id="ajax" value="ajax" />
+
+	</div>
+</body>
+</html>

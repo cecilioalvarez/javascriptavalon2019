@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				
+				$.get("../ListaLibros.jsp?", function(datos){
+					
+					console.log(datos);
+					$("body").append(datos);
+					
+					//$("table").append("<tr><td>"+nombre+"</td><td>"+edad+"</td></tr>")
+					
+				});
+				
+
+			
+			})
+			
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
+
+
+
+<!-- 	$("#ajax").click( -->
+<!-- 						function() { -->
+							
+<!-- 							var promesa =$.get("../ListaLibros4.jsp"); -->
+
+<!-- 							console.log(promesa); -->
+							
+							
+<!-- 							//CUANDO LA PROMESA FINALIZA -->
+<!-- 					promesa.then(function(datos){ -->
+									
+
+<!-- 							console.log(datos); -->
+
+<!-- 							var datos = JSON.parse(datos.trim()); -->
+
+<!-- 							console.log(datos); -->
+
+<!-- 							for (var i = 0; i < datos.length; i++) { -->
+<!-- 								$("body") -->
+<!-- 										.append( -->
+<!-- 												"<p>" + datos[i].titulo -->
+<!-- 														+ ", " -->
+<!-- 														+ datos[i].autor -->
+<!-- 														+ ", " -->
+<!-- 														+ datos[i].paginas -->
+<!-- 														+ "</p>"); -->
+<!-- 							} -->
+
+		
+					
+						
+<!-- 					}) -->
+					
+		
+					
+
+<!-- 						}) -->

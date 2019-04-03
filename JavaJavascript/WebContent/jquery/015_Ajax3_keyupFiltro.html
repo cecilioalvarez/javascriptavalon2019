@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+
+
+
+
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		//keydown, keypress y keyup
+		//keyup: cuando levantas el de la tecla
+		$("#filtro").keyup(function() {
+		//$("#ajax").click(function() {
+			
+			var textoFiltro=$("#filtro").val();
+			$.get("../ListaLibros2_filtroLIKE.jsp?filtro="+textoFiltro, function(datos){
+				
+				console.log(datos);
+				$("p").remove();
+				$("body").append(datos);
+			});
+			
+
+		})
+			
+
+	})
+</script>
+</head>
+<body>
+
+
+	
+<div>
+<input type="text" id="filtro"/>
+<input type="button" id="ajax" value="ajax"/>
+</div>
+</body>
+</html>

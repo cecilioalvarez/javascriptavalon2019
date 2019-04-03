@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+.verde {
+	color: green;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: red;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	front-size: 20px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: pink;
+}
+</style>
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+
+				
+
+				$("#ajax").click(
+						function() {
+							//el problema de la priamide de DOM -->se desaconseja su uso
+							//ponemos el segundo get dentro del primero
+							//la primera llamada Ajax tardara 4 minutos y la segunda otros 4 a partir del que termina el primero
+							$.get("../ListaLibros4.jsp", function(datos) {
+
+								console.log(datos);
+
+								var datos = JSON.parse(datos.trim());
+
+								console.log(datos);
+
+								for (var i = 0; i < datos.length; i++) {
+									$("body")
+											.append(
+													"<p>" + datos[i].titulo
+															+ ", "
+															+ datos[i].autor
+															+ ", "
+															+ datos[i].paginas
+															+ "</p>");
+								}
+
+								$.get("../ListaLibros5.jsp", function(datos) {
+
+									console.log(datos);
+
+									var datos = JSON.parse(datos.trim());
+
+									console.log(datos);
+
+									for (var i = 0; i < datos.length; i++) {
+										$("body").append(
+												"<p>" + datos[i].titulo + ", "
+														+ datos[i].autor + ", "
+														+ datos[i].paginas
+														+ "</p>");
+									}
+								})
+							})
+
+						})
+
+			})
+</script>
+</head>
+<body>
+
+
+
+	<div>
+
+		<input type="button" id="ajax" value="ajax" />
+
+	</div>
+</body>
+</html>
