@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#ajax1").click(function(){
+		  /* Con la Api de promesas podemos conseguir que se ejecuten dos tareas en el mismo instante..
+		    En este caso cada tarea tarda 4 segundos en procesarse. Gracias a las promesas podemos 
+		    podemos ejecutar ambas a la vez tardado los 4 segundos de proceso y mostrando ambos 
+		    procesos en el mismo instante */
+			
+		var promesa = $.get("../ListaLibros3.jsp");
+		
+		var promesa2 = $.get("../ListaLibros4.jsp");
+			
+		/*promesa.then(function(datos){
+							//  JSON.parse() convierte texto en formato JSON en un objeto JavaScript:
+			var datos = JSON.parse(datos.trim());  //trim() remueve espacios en blanco de un String
+			for (var i=0;i<datos.length;i++) {	
+				
+				$("body").append("<p>"+datos[i].titulo+", "+datos[i].autor+", "+datos[i].paginas+"</p>");
+			}
+		})	*/
+		
+		$.when(promesa,promesa2).then(function(datos1,datos2){
+		
+			var datos1 = JSON.parse(datos1[0].trim());  //trim() remueve espacios en blanco de un String
+			var datos2 = JSON.parse(datos2[0].trim());
+			
+			for (var i=0;i<datos1.length;i++) {	
+				
+				$("body").append("<p>"+datos1[i].titulo+", "+datos1[i].autor+", "+datos1[i].paginas+"</p>");
+			}
+			for (var i=0;i<datos2.length;i++) {	
+				
+				$("body").append("<p>"+datos2[i].titulo+", "+datos2[i].autor+", "+datos2[i].paginas+"</p>");
+			}
+		})
+	
+ 	})
+		
+		// se asigna un valor a numero
+		var numero = 7;
+		// se imprime el numero
+		console.log(numero);
+		
+		//se declara una variable (ojo!, no se le asigna valor)
+		// valor es undefined
+		var numeroFuturo;
+		
+		// se asigna un tiempo de timeout de 3 segundos
+		setTimeout(function(){
+			numeroFuturo=10;
+		},3000);
+		
+		// se imprime el valor del numeroFuturo pasado 4 segundos (ya se le asignó valor)
+		setTimeout(function(){
+			console.log(numeroFuturo);
+		},4000);
+		
+})
+		
+		/*
+		function(datos){	
+							//  JSON.parse() convierte texto en formato JSON en un objeto JavaScript:
+			var datos = JSON.parse(datos.trim());  //trim() remueve espacios en blanco de un String
+			for (var i=0;i<datos.length;i++) {	
+				
+				$("body").append("<p>"+datos[i].titulo+", "+datos[i].autor+", "+datos[i].paginas+"</p>");
+			}
+			
+			function(datos){	
+				//  JSON.parse() convierte texto en formato JSON en un objeto JavaScript:
+				var datos = JSON.parse(datos.trim());  //trim() remueve espacios en blanco de un String
+				for (var i=0;i<datos.length;i++) {	
+
+					$("body").append("<p>"+datos[i].titulo+", "+datos[i].autor+", "+datos[i].paginas+"</p>");
+				}
+		
+		*/
+
+
+</script>
+</head>
+<body>
+
+<input type="button" value="ajax1" id="ajax1"/>
+
+</body>
+</html>

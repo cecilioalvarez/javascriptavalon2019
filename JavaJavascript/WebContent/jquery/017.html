@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#filtro").keyup(function(){
+		
+		$.get("../ListaLibros2.jsp?filtro="+$("#filtro").val(),function(datos){
+			
+			$("p").remove();					//  JSON.parse() convierte texto en formato JSON en un objeto JavaScript:
+			var datos = JSON.parse(datos.trim());  //trim() remueve espacios en blanco de un String
+			for (var i=0;i<datos.length;i++) {	
+
+				$("body").append("<p>"+datos[i].titulo+", "+datos[i].autor+", "+datos[i].paginas+"</p>");
+			}
+		})
+	})
+})
+
+</script>
+</head>
+<body>
+<input type="text" id="filtro"/>
+<!-- <input type="button" value="ajax" id="ajax"/> -->
+
+</body>
+</html>

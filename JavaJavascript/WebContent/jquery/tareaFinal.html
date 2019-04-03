@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$.get("../ListaLibrosCap.jsp",function(datos){
+		$("body").append(datos);
+	
+	})
+	$("td").click(function(){
+		$(this).parent().addClass("seleccionada");
+	})
+})
+
+
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>
