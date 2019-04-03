@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	$("#ajax1").click(function(){
+		var promesa=$.get("../ListaLibros4.jsp");
+		var promesa2=$.get("../ListaLibros5.jsp")
+		
+// 		promesa.then(function(datos){
+// 			var datos=JSON.parse(datos.trim());
+// 			for(var i=0;i<datos.length;i++){
+// 				$("body").append("<p>"+datos[i].titulo+","+datos[i].autor+","+datos[i].paginas+"</p>");
+// 		}
+// 	})
+		$.when(promesa,promesa2).then(function(datos,datos2){
+			var datos= JSON.parse(datos[0].trim());
+			
+			for(var i=0;i<datos.length;i++){
+				$("body").append("<p>"+datos[i].titulo+","+datos[i].autor+","+datos[i].paginas+"</p>");
+			}
+			var datos= JSON.parse(datos2[0].trim());
+			
+			for(var i=0;i<datos.length;i++){
+				$("body").append("<p>"+datos[i].titulo+","+datos[i].autor+","+datos[i].paginas+"</p>");
+			}
+		})
+		
+		})
+		
+	
+	
+});
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="ajax1" id="ajax1" />
+	</form>
+
+</body>
+</html>
