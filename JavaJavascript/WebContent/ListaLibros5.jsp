@@ -13,8 +13,6 @@
 	LibroRepository repo = new LibroRepository();
 	List<Libro> lista = repo.buscarTodosLib();
 
-	out.println(lista);
-
 	Gson gson = new Gson();
 	out.println(gson.toJson(lista));
 %>
