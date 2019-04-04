@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#filtro").keyup(function(){
+		
+		var textoFiltro=$("#filtro").val();
+		$.get("../ListaLibros2.jsp?filtro=" + textoFiltro, function(datos){
+			
+			$("p").remove();
+			$("body").append(datos);
+		})
+		
+	})
+	
+})
+</script>
+</head>
+<body>
+
+Filtrar: <input type="text" id="filtro">
+
+</body>
+</html>

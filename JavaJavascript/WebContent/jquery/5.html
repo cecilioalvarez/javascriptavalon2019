@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+.verde {
+	color:green;
+	font-size: 20px;
+	padding: 10px;
+}
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#button1").click(function (){
+		var num = parseInt($("#num").val())-1;
+		$("p:eq("+num+")").css("color","red");
+	})
+})
+</script>
+</head>
+<body>
+<p>Helloo</p>
+<p>Helloo</p>
+<p>Helloo</p>
+<p>Helloo</p>
+<p>Helloo</p>
+<input type="text" id="num">
+<input type="button" value="Click me!" id="button1"/>
+</body>
+</html>

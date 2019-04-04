@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#sumaAjax").click(function(){
+		
+		$.get("../sumaAjax.jsp?a=" + $('#a').val() + "&b=" + $("#b").val(),function(res){
+			$("p:last").append("<p>" + res + "</p>");
+		})
+		
+	})
+	
+})
+</script>
+</head>
+<body>
+<table id="myTable">
+  
+</table>
+
+<p>
+a: <input type="text" id="a">
+</p>
+<p>
+b: <input type="text" id="b">
+</p>
+<p>
+<input type="button" value="Sumar" id="sumaAjax"/>
+</p>
+
+
+
+</body>
+</html>

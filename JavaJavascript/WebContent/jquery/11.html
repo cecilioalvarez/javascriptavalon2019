@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+.verde {
+	color:green;
+	font-size: 20px;
+	padding: 10px;
+}
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("table img").mouseenter(function(){
+		$("#imagen").attr("src", $(this).attr('src'));
+	})
+})
+</script>
+</head>
+<body>
+<table id="tabla">
+	<tr>
+		<td><img src="01.jpg"/></td>
+		<td><img src="02.jpg"/></td>
+		<td><img src="03.jpg"/></td>
+		<td><img src="04.jpg"/></td>
+	</tr>
+</table>
+<p>
+-----------------------------------
+</p>
+<p>
+<img id="imagen"/>
+</p>
+</body>
+</html>

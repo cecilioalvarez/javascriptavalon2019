@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+.verde {
+	color:green;
+	font-size: 20px;
+	padding: 10px;
+}
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$(".boton").click(function(){
+		//alert("Has pulsado");
+		//var texto = console.log($(this).parent().prev().text();
+		//console.log("El texto es: " + texto);
+		
+		if ($(this).val() == "+") {
+			var nodoTexto = $(this).parent().prev();
+			nodoTexto.text(parseInt(nodoTexto.text())+1);
+		} else {
+			var nodoTexto = $(this).parent().prev().prev();
+			nodoTexto.text(parseInt(nodoTexto.text())-1);
+		}
+	})
+	$("tr").click(function(){
+		$(this).css("background-color","red");
+	})
+	
+})
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td>Pedro</td>
+		<td>5</td>
+		<td><input type="button" class="boton" value="+"/></td>
+		<td><input type="button" class="boton" value="-"/></td>
+	</tr>
+	<tr>
+		<td>Gema</td>
+		<td>5</td>
+		<td><input type="button" class="boton" value="+"/></td>
+		<td><input type="button" class="boton" value="-"/></td>
+	</tr>
+	<tr>
+		<td>Miguel</td>
+		<td>5</td>
+		<td><input type="button" class="boton" value="+"/></td>
+		<td><input type="button" class="boton" value="-"/></td>
+	</tr>
+	<tr>
+		<td>Ana</td>
+		<td>5</td>
+		<td><input type="button" class="boton" value="+"/></td>
+		<td><input type="button" class="boton" value="-"/></td>
+	</tr>
+</table>
+<input type="button" value="Click me!" id="button1"/>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+.verde {
+	color:green;
+	font-size: 20px;
+	padding: 10px;
+}
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#boton").click(function(){
+		$("#myTable").append("<tr><td>" + $("#nombre").val() + "</td><td>" + $("#numero").val() + "</td></tr>");
+	})
+	
+})
+</script>
+</head>
+<body>
+<table id="myTable">
+  
+</table>
+
+<p>
+<input type="text" id="nombre">
+</p>
+<p>
+<input type="text" id="numero">
+</p>
+<p>
+<input type="button" value="Introducir en Tabla" id="boton"/>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function table() {
+	var body = document.getElementById("cuerpo");
+	var table = document.createElement("table");
+	table.style.border = "thick solid #000000";
+
+	for (var i = 0; i <= 5; i++) {
+		var tr = document.createElement("tr");
+		
+		for (var j = 0; j <= 5; j++) {
+			var td = document.createElement("td");
+			
+			td.innerHTML = i + " " + j;
+			td.style.border = "thick solid #000000";
+			tr.appendChild(td);
+			
+		}
+		table.appendChild(tr);
+	}
+	body.appendChild(table);
+}
+
+</script>
+</head>
+<body id="cuerpo">
+<p id="miparrafo">
+
+</p>
+<input type="button" value="Generar Tabla" onclick="table()">
+</body>
+</html>

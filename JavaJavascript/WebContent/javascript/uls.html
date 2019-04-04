@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function parrafos() {
+	var body = document.getElementById("cuerpo");
+	var num = parseInt(document.getElementById("num").value);
+
+	for (var i = 0; i < num; i++) {
+		var ul = document.createElement("ul")
+		var li = document.createElement("li")
+		li.innerHTML = i;
+		ul.appendChild(li);
+		body.appendChild(ul);
+	}	
+}
+
+</script>
+</head>
+<body id="cuerpo">
+<p id="miparrafo">
+
+</p>
+<input type="text" id="num">
+<input type="button" value="Generar ULs" onclick="parrafos()">
+</body>
+</html>

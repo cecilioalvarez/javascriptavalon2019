@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+.rosa {
+	color: pink;
+	font-size: 20px;
+	padding: 10px;
+}
+.verde {
+	color:green;
+	font-size: 20px;
+	padding: 10px;
+}
+.azul {
+	color: blue;
+	font-size: 20px;
+	padding: 10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$("#destacar").click(function(){
+		
+		$("tr").find("td:last").each(function() {
+			
+			var nota = parseInt($(this).text());
+			
+            var max = 0;
+            var min = 10;
+			if (nota > max) {
+				max = nota;
+				$notaMax = $(this);
+			}
+			/*if (nota < min) {
+				$notaMin = $(this);
+				min = nota;
+			}*/
+		});
+		
+		$notaMax.css("color","green");
+		$notaMin.css("color","red");
+	})
+})
+</script>
+</head>
+<body>
+<table id="tabla">
+	<tr>
+		<td>Pedro</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>Gema</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>Miguel</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>Ana</td>
+		<td>5</td>
+	</tr>
+</table>
+<input type="button" value="Mostrar destacados" id="destacar"/>
+</body>
+</html>

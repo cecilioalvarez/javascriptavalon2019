@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function mult() {
+	var body = document.getElementById("cuerpo");
+	var a = parseInt(document.getElementById("a").value);
+	var table = document.createElement("table");
+
+	for (var i = 0; i <= 10; i++) {
+		var tr = document.createElement("tr");
+		var td1 = document.createElement("td");
+		var td2 = document.createElement("td");
+		
+		td1.innerHTML = a + " x " + i;
+		td2.innerHTML = a*i;
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		table.appendChild(tr);
+	}
+	body.appendChild(table);
+}
+
+</script>
+</head>
+<body id="cuerpo">
+<p id="miparrafo">
+
+</p>
+<input type="text" id="a">
+<input type="button" value="Generar Tabla Multiplicar" onclick="mult()">
+</body>
+</html>
