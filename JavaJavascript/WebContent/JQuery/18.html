@@ -15,13 +15,16 @@ $(document).ready(function(){
 		
 		var datos = JSON.parse(datos.trim());
 		
-		for (var i = 0; i < datos.length; i++) {
+		datos.forEach((libro)=> {
 			
-			$('#tablaLibros').append("<tr class='filaLibro' onmouseover='listaCapitulosPorLibro(this)'><td>"+datos[i].titulo+ "</td><td>"+ datos[i].autor +"</td></tr>")
-			
-		}
+		$('#tablaLibros').append(
+				
+		`<tr class='filaLibro' onmouseover='listaCapitulosPorLibro(this)'><td> ${libro.titulo} </td><td> ${libro.autor} </td></tr>`
+		
+		)
+		
+		})
 	})
-	
 	
 });
 
@@ -33,11 +36,10 @@ function listaCapitulosPorLibro(fila){
 		
 		$('.filaCapitulo').remove();
 		
-		for (var i = 0; i < datos.length; i++) {
+		datos.forEach((capitulo)=> {
 			
-			$('#tablaCapitulos').append("<tr class='filaCapitulo'><td>"+datos[i].titulo+ "</td><td>"+ datos[i].paginas +"</td></tr>")
-		}
-		
+			$('#tablaCapitulos').append(`<tr class='filaCapitulo'><td> ${capitulo.titulo} </td><td> ${capitulo.paginas} </td></tr>`);
+		})
 	})
 }
 
