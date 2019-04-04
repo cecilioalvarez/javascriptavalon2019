@@ -94,23 +94,13 @@
 			
 					console.log("llega promesa:",datos);
 
+					datos = JSON.parse(datos.trim());
 				
-					var datos2 =datos.trim();
-					//var datos =JSON.stringify(datos);
-					console.log("datos.trim():",datos2);
+					console.log("JSON: ",datos);
 					
-					// datos = JSON.parse(datos[0].trim());
-						var datos3 = datos2.split("[");
-						var datos4 = datos3[1].split("]");
-						console.log("datos3[1]:",datos4[1]);
-
-						datos5 = datos4[0].split("},{");
-						console.log("datos5:",datos5);
-						
-						
-           		console.log("datos4[1]:",datos5[1]);
+				
            		
-					for (var i = 0; i < datos5.length; i++) {
+					for (var i = 0; i < datos.length; i++) {
 						$("body")
 								.append(
 										"<p>" + datos[i].titulo
@@ -118,6 +108,10 @@
 												+ datos[i].paginas
 												+ "</p>");
 					}
+					
+// 					datos.forEach((datos)=>{
+// 						$("#detalle")append(`<p>\${datos.titulo}</p>´);
+// 					})
 
 
 			
