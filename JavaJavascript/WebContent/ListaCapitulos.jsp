@@ -9,22 +9,9 @@
     pageEncoding="ISO-8859-1"%>
 <%
 
-	LibroRepositorioJPA repo= new LibroRepositorioJPA();
-	List<Libro> lista2= repo.buscarTodos();
-	List<Libro> lista;
 	
-	CapitulosRepositorioJPA repocap= new CapitulosRepositorioJPA();
-	List<Capitulo> listacap= repocap.buscarTodosConLibros();
-		
-	if (request.getParameter("filtro")!=null){
-		
-		lista= lista2.stream()
-				.filter((l)->l.getTitulo()
-				.contains(request.getParameter("filtro")))
-				.collect(Collectors.toList());
-		}else{
-			lista=lista2;
-		}
+CapitulosRepositorioJPA repocap= new CapitulosRepositorioJPA();
+List<Capitulo> lista= repocap.buscarTodosParaUnLibro(new Libro(request.getParameter("titulo")));
 	
 	Gson gson=new Gson();
 	out.println(gson.toJson(lista));

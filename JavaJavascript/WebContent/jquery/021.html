@@ -11,7 +11,7 @@
 $(document).ready(function(){
 
 		
-		var promesa=$.get("../ListaLibros6.jsp"); //promesa variable que tiene un valor para siempre
+		var promesa=$.get("../ListaLibros6.jsp");
 		
 		promesa.then(function(datos){
 			var datos=JSON.parse(datos.trim());
