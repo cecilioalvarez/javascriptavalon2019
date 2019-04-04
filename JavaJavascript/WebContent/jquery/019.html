@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		
+		$("#ajax1").click(function() {
+
+			var promesa = $.get("../ListaLibros4.jsp");
+
+			var promesa2 = $.get("../ListaLibros5.jsp");
+			/*
+			promesa.then(function(datos) {
+				
+				var datos= JSON.parse(datos.trim());
+				for (var i=0;i<datos.length;i++) {
+					
+					$("body").append("<p>"+ datos[i].titulo+","+ datos[i].autor+","+ datos[i].paginas+"</p>");
+				}
+			
+			})*/
+			
+			$.when(promesa,promesa2).then(function(datos,datos2) {
+				
+				console.dir(datos);
+				
+				/*
+				var datos= JSON.parse(datos[0].trim());
+				
+				for (var i=0;i<datos.length;i++) {
+					
+					$("body").append("<p>"+ datos[i].titulo+","+ datos[i].autor+","+ datos[i].paginas+"</p>");
+				}
+				var datos2= JSON.parse(datos2[0].trim());
+				
+				for (var i=0;i<datos2.length;i++) {
+					
+					$("body").append("<p>"+ datos2[i].titulo+","+ datos2[i].autor+","+ datos2[i].paginas+"</p>");
+				}*/	
+			
+			})
+			
+			
+		})
+		
+		
+		
+		
+		
+		
+		// se asigna un valor al numero
+		var numero=7;
+		// se imprime el numero
+		console.log(numero);
+		
+		//tercero se declara una varible ojo no se asigna valor
+		//valor es undefined
+		var numeroFuturo;
+		
+		// cuarto se asigna un tiempo de timeout de 3 segundos
+		setTimeout(function() {
+			
+			numeroFuturo=10;	
+		},3000);
+		
+		//quinto  se imprimer el valor del numero 
+		setTimeout(function() {
+			console.log(numeroFuturo);
+		},4000);
+		
+		// a una variable se le asigna un valor y punto
+		
+		// a un valor a futuro se le asigna una funcion y tiene un tiempo de respuesta
+		
+		
+		
+	})
+
+	/*
+	
+	function(datos){
+			
+			var datos= JSON.parse(datos.trim());
+			for (var i=0;i<datos.length;i++) {
+				
+				$("body").append("<p>"+ datos[i].titulo+","+ datos[i].autor+","+ datos[i].paginas+"</p>");
+			}
+		}
+	function(datos){
+	
+	var datos= JSON.parse(datos.trim());
+	for (var i=0;i<datos.length;i++) {
+		
+		$("body").append("<p>"+ datos[i].titulo+","+ datos[i].autor+","+ datos[i].paginas+"</p>");
+	}
+	}
+	 */
+</script>
+</head>
+<body>
+
+	<input type="button" value="ajax1" id="ajax1" />
+
+
+</body>
+</html>

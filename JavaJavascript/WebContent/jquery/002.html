@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+.verde {
+
+color:green;
+font-size:20px;
+padding:10px;
+}
+
+.rosa {
+color:pink;
+font-size:30px;
+padding:10px;
+}
+
+.azul {
+color:blue;
+font-size:40px;
+padding:10px;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	//le pasas a la funcion $ un selector del documento
+	$("#boton1").click(function() {
+	
+		/*$("p").addClass("rosa");
+		$("p:gt(2)").addClass("azul");
+		$("p").css("color","orange");
+		*/
+		// p ul li
+		// .verde
+		//p ul >li 
+		//p ul:hover
+		
+		$("p span:eq(0)").addClass("verde");
+	})
+	
+	
+})
+</script>
+</head>
+<body>
+<p>hola</p>
+<p>hola</p>
+<p><span>hola</span></p>
+<p><span>hola</span></p>
+<p>hola</p>
+<p>hola</p>
+<p>hola</p>
+<p>hola</p>
+
+
+<input type="button" value="pulsar" id="boton1"/>
+</body>
+</html>

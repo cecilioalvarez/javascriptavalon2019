@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+table img {
+	
+	width:30%;
+	height:30%;
+	
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+		$("table img").mouseenter(function() {
+		
+			$("#nueva").attr("src",$(this).attr("src"));
+			
+		})
+	
+		
+	})
+</script>
+</head>
+<body>
+	<table>
+
+		<tr>
+			<td><img src="imagen1.jpg"/></td>
+			<td><img src="imagen2.jpg"/></td>
+		</tr>
+	</table>
+
+	<img id="nueva"/>
+
+</body>
+</html>

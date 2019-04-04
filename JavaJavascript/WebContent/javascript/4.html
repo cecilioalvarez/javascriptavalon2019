@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+function f1() {
+	
+//una variable en javascript que apunta al parrafo que tiene ese id
+// esto es el manejo del api de DOM desde JavaScript
+var parrafo= document.getElementById("miparrafo");
+console.log(parrafo.innerHTML);
+}
+
+
+</script>
+</head>
+<body>
+<p id="miparrafo">
+hola desde un parrafo
+</p>
+<input type="button" value="pulsame" onclick="f1()"/>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#ajax1").click(function() {
+		
+		$.get("../ListaLibros4.jsp",function(datos){
+			
+			var datos= JSON.parse(datos.trim());
+			for (var i=0;i<datos.length;i++) {
+				
+				$("body").append("<p>"+ datos[i].titulo+","+ datos[i].autor+","+ datos[i].paginas+"</p>");
+			}
+		})
+		
+		
+		$.get("../ListaLibros5.jsp",function(datos){
+			
+			var datos= JSON.parse(datos.trim());
+			for (var i=0;i<datos.length;i++) {
+				
+				$("body").append("<p>"+ datos[i].titulo+","+ datos[i].autor+","+ datos[i].paginas+"</p>");
+			}
+		})
+	
+		
+	
+	
+	})
+	})
+</script>
+</head>
+<body>
+
+	<input type="button" value="ajax1" id="ajax1"/>
+	
+
+</body>
+</html>

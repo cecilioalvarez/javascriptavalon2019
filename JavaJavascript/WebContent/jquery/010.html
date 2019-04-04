@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.verde {
+	color: green;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.rosa {
+	color: pink;
+	font-size: 30px;
+	padding: 10px;
+}
+
+.azul {
+	color: blue;
+	font-size: 40px;
+	padding: 10px;
+}
+
+.seleccionada {
+	background-color: grey;
+}
+</style>
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+	var maximo=0;
+	var $elemento;
+		
+	$("#seleccionar").click(function() {
+		
+		
+		
+		$("tr").find("td:last").each(function() {
+			
+			
+			var valor=parseInt($(this).text());
+			
+			if (valor>maximo) {
+				maximo=valor;
+				$elemento=$(this);
+			}
+		
+		
+		})
+		
+		$elemento.css("color","red");
+	
+	})
+	
+	
+		
+	})
+</script>
+</head>
+<body>
+	<table>
+
+		<tr>
+			<td>pedro</td>
+			<td>5</td>
+
+		</tr>
+		<tr>
+			<td>angel</td>
+			<td>5</td>
+
+		</tr>
+		<tr>
+			<td>gema</td>
+			<td>7</td>
+
+		</tr>
+		<tr>
+			<td>sara</td>
+			<td>6</td>
+
+		</tr>
+
+	</table>
+
+
+
+	<input type="button" id="seleccionar" value="seleccionar" />
+
+</body>
+</html>
