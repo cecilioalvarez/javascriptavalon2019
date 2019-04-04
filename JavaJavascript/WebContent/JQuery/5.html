@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+$('.sumar').click(function(){
+
+       var nodoTexto = $(this).parent().prev();
+       nodoTexto.text(parseInt(nodoTexto.text()) + 1)
+})
+
+$('.restar').click(function(){
+
+    var nodoTexto = $(this).parent().prev().prev();
+    nodoTexto.text(parseInt(nodoTexto.text()) - 1)
+})
+
+
+});
+
+
+</script>
+
+<body>
+
+    <table border="1">
+
+            <tr>
+                    <th>Nombre</th>
+                    <th>Nota</th>
+                </tr>
+
+        <tr>
+            <td>Gabriel</td>
+            <td>8</td>
+            <td><input type="button" value="+" class="sumar"></td>
+            <td><input type="button" value="-" class="restar"></td>
+        </tr>
+
+        <tr>
+            <td>Daniel</td>
+            <td>7</td>
+            <td><input type="button" value="+" class="sumar"></td>
+            <td><input type="button" value="-" class="restar"></td>
+        </tr>
+
+        <tr>
+            <td>Pablo</td>
+            <td>3</td>
+            <td><input type="button" value="+" class="sumar"></td>
+            <td><input type="button" value="-" class="restar"></td>
+        </tr>
+
+        <tr>
+            <td>Oliver</td>
+            <td>7</td>
+            <td><input type="button" value="+" class="sumar"></td>
+            <td><input type="button" value="-" class="restar"></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

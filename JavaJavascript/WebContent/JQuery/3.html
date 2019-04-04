@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+.verde{
+    color:green;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.azul{
+    color:blue;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.rosa{
+    color:pink;
+    font-size: 20px;
+    padding: 10px;
+}
+
+
+
+</style>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+$('#boton1').click(function(){
+
+    $('p').addClass("verde");
+    $('p:gt(2)').addClass("azul");
+    $("p").css("color", "orange");
+
+})
+
+
+});
+
+
+</script>
+
+<body>
+
+    <p>Hola</p>
+    <p>Hola</p>
+    <p>Hola</p>
+    <p>Hola</p>
+    <p>Hola</p>
+    <p><span>Hola</span></p>
+    <input type="button" value="Estilos" id="boton1">
+
+</body>
+
+</html>

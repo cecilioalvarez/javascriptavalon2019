@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+$('#botonInsertar').click(function(){
+
+$('table').append('<tr><td>'+ $('#nombre').val() +'</td><td>'+ $('#nota').val()+'</td></tr>')
+
+})
+
+
+});
+</script>
+
+<body>
+
+<fieldset style="width:300px">
+    <legend>Crear Alumno</legend>
+    <label>Nombre</label>
+    <br>
+    <input type="text" placeholder="Nombre" id="nombre"/>
+    <br>
+
+    <label>Nota</label>
+    <br>
+    <input type="text" placeholder="Nota" id="nota"/>
+    <br>
+    <br>
+    <input type="button" value="Insertar" id="botonInsertar">
+</fieldset>
+    
+    <br>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Nota</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>

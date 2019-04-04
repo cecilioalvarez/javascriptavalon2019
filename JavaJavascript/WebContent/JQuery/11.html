@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $('.imagenes').mouseenter(function(){
+
+        $('#principal').attr('src', $(this).attr('src'));
+
+    })
+
+
+});
+
+</script>
+
+<body>
+
+<br>
+    <br>
+    <table>
+    
+            <tr>
+                <td>
+                <img class="imagenes" src="https://fotografias.lasexta.com/clipping/cmsimages01/2017/02/07/364CAAAC-A60E-43BB-8FED-05AA0B8F3AF9/58.jpg" style="width: 300px">
+                </td>
+                <td>
+                <img class="imagenes" src="https://www.infobae.com/new-resizer/kAjCyEfwdw0H57sLGDM5OOrTFUI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/04/06155038/perro-beso-1024x576.jpg" style="width: 300px">
+                </td>
+                <td>
+                <img class="imagenes" src="https://estaticos.elperiodico.com/resources/jpg/0/7/boo-perro-mas-bonito-1548235035870.jpg" style="width: 300px">
+                </td>
+            </tr>
+    </table>
+
+    <img id="principal" style="width: 500px">
+
+</body>
+
+</html>

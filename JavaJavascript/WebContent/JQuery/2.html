@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+$('#boton1').click(function(){
+
+    $('body').css("color", "red");
+})
+
+$('#boton2').click(function(){
+
+$('body').css("color", "green");
+})
+
+$('#boton3').click(function(){
+
+$('body').css("color", "blue");
+})
+
+});
+
+
+</script>
+
+<body>
+
+    <p>Hola</p>
+    <input type="button" value="Rojo" id="boton1">
+    <input type="button" value="Verde" id="boton2">
+    <input type="button" value="Azul" id="boton3">
+
+</body>
+
+</html>

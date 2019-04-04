@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$('#filtro').keyup(function() {
+	
+		var filtro = $('#filtro').val()
+		
+		
+		$.get('../listaLibros2.jsp?filtro=' + filtro, function(datos) {
+			
+			$('.datos').remove();
+			var datos = JSON.parse(datos.trim())
+			for(var i = 0; i < datos.length; i++){
+				
+				$('body').append("<p class='datos'>"+datos[i].titulo +" , "+datos[i].autor);
+			}
+			
+			
+			
+		})
+	})
+
+});
+
+</script>
+
+<body>
+
+<input type="text" id="filtro" >
+<br>
+
+</body>
+</html>

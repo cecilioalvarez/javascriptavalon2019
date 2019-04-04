@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+
+function tabla(){
+
+var numero = document.getElementById('texto');
+var body = document.getElementById('cuerpo');
+
+for(var i = 0; i < 10; i++){
+
+    var p = document.createElement('p');
+    p.innerHTML = numero.value + " x " + (i+1) + " = " + parseInt(numero.value) * (i+1)
+    body.append(p);
+
+}
+
+}
+
+</script>
+
+<body id="cuerpo">
+
+<input id="texto" type="text" placeholder="Escribe el número para conocer su tabla" style="width: 350px"/>
+
+<input type="button" value="OK" onclick="tabla()">
+
+<table id="tabla" border="1">
+
+</table>
+
+
+
+</body>
+</html>

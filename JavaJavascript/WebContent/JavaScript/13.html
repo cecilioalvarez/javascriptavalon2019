@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+
+</head>
+
+<script type="text/javascript">
+
+
+
+function tabla(){
+
+var body = document.getElementById('cuerpo');
+var tabla = document.createElement('table');
+
+
+var NumFilas = document.getElementById('filas').value;
+var NumColumnas = document.getElementById('columnas').value;
+
+for(var i = 0; i < NumFilas; i++){
+
+var fila = document.createElement('tr');
+
+for(var j = 0; j < NumColumnas; j++){
+
+    var columna = document.createElement('td');
+    columna.innerHTML = (i+1)+"."+j;
+    fila.appendChild(columna)
+    tabla.appendChild(fila)
+}
+
+}
+
+body.appendChild(tabla);
+
+}
+
+</script>
+
+<body id="cuerpo">
+
+<input id="filas" type="text" placeholder="Escribe el número de filas"/>
+<input id="columnas" type="text" placeholder="Escribe el número de columnas"/>
+
+<input type="button" value="OK" onclick="tabla()">
+
+
+</body>
+</html>

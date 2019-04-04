@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+
+function f1(){
+	
+	var parrafo = document.getElementById("parrafo");
+	var texto = document.getElementById("texto");
+	parrafo.innerHTML = texto.value;
+}
+
+</script>
+
+<body>
+
+<p id="parrafo">
+
+</p>
+<input id="texto" type="text">
+<input type="button" value="Pulsame" onclick="f1()">
+</body>
+</html>

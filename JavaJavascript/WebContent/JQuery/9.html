@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+
+
+</style>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $('#ocultar').click(function(){
+
+        $('img').slideUp()
+    });
+
+    $('#mostrar').click(function(){
+
+        $('img').slideDown()
+    });
+
+
+});
+
+</script>
+
+<body>
+
+<input type="button" value="Mostrar" id="mostrar">
+<input type="button" value="Ocultar" id="ocultar">
+
+<br>
+<img src="https://fotografias.lasexta.com/clipping/cmsimages01/2017/02/07/364CAAAC-A60E-43BB-8FED-05AA0B8F3AF9/58.jpg" style="width: 300px">
+
+</body>
+
+</html>

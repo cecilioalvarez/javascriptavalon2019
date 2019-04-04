@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+.verde{
+    color:green;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.azul{
+    color:blue;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.rosa{
+    color:pink;
+    font-size: 20px;
+    padding: 10px;
+}
+
+
+
+</style>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+$('#boton1').click(function(){
+
+    var pos = parseInt($('#posicion').val()) - 1;
+    var parrafo = $("p")[pos];
+    
+    $(parrafo).addClass('verde');
+    
+})
+
+
+});
+
+
+</script>
+
+<body>
+
+    <p>Hola</p>
+    <p>Hola</p>
+    <p>Hola</p>
+    <p>Hola</p>
+    <p>Hola</p>
+    
+    <input type="text" id="posicion">
+    <input type="button" value="OK" id="boton1">
+
+</body>
+
+</html>

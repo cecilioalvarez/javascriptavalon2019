@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$.get("../listaLibros3.jsp", function(datos){
+		
+		var datos = JSON.parse(datos.trim());
+		
+		for (var i = 0; i < datos.length; i++) {
+			
+			$('#tablaLibros').append("<tr class='filaLibro' onmouseover='listaCapitulosPorLibro(this)'><td>"+datos[i].titulo+ "</td><td>"+ datos[i].autor +"</td></tr>")
+			
+		}
+	})
+	
+	
+});
+
+function listaCapitulosPorLibro(fila){
+	
+	$.get("../listaCapitulosLibro.jsp?tituloLibro="+$($(fila).find('td')[0]).text(), function(datos){
+		
+		var datos = JSON.parse(datos.trim());
+		
+		$('.filaCapitulo').remove();
+		
+		for (var i = 0; i < datos.length; i++) {
+			
+			$('#tablaCapitulos').append("<tr class='filaCapitulo'><td>"+datos[i].titulo+ "</td><td>"+ datos[i].paginas +"</td></tr>")
+		}
+		
+	})
+}
+
+</script>
+
+<body>
+
+<table id="tablaLibros" border="1">
+<tr> 
+<th>Titulo</th> 
+<th>Autor</th>
+<tr>
+</table>
+<br>
+
+<br>
+<table id="tablaCapitulos" border="1">
+<tr> 
+<th>Titulo</th>
+<th>Paginas</th>
+<tr>
+</table>
+	
+
+</body>
+</html>

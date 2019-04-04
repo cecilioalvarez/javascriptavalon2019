@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+
+function parrafo(){
+
+var body = document.getElementById('cuerpo');
+var num1 = parseInt(document.getElementById('n1').value);
+
+for(var i = 0; i < num1; i++){
+
+	var p = document.createElement('p');
+	p.innerHTML = "Parrafo Nº " + (i+1);
+
+	body.appendChild(p)
+}
+}
+
+
+
+
+</script>
+
+<body id="cuerpo">
+
+<input id="n1" type="text">
+
+<input type="button" value="OK" onclick="parrafo()">
+</body>
+</html>

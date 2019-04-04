@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+
+
+</style>
+
+</head>
+
+<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    
+
+    $('#mayor').click(function(){
+    
+    var fila;
+    var nota = 0;
+
+    $('tr').each(function(){
+
+        if(parseInt($($(this).find('td')[1]).text()) > nota){
+
+            nota = parseInt($($(this).find('td')[1]).text());
+            fila = $(this)
+        }
+    })
+
+     fila.css('background-color', 'green');
+    });
+
+    $('#menor').click(function(){
+    
+    var filas;
+    var nota;
+
+    $('tr').each(function(){
+
+        if(nota == undefined){
+
+        nota = parseInt($($(this).find('td')[1]).text());
+        }
+
+        if(parseInt($($(this).find('td')[1]).text()) <= nota){
+
+            nota = parseInt($($(this).find('td')[1]).text());
+            fila = $(this)
+        }
+    })
+
+     fila.css('background-color', 'red');
+     
+    });
+
+
+});
+
+</script>
+
+<body>
+
+<input type="button" value="Mayor" id="mayor">
+<input type="button" value="Menor" id="menor">
+
+<br>
+    <br>
+    <table border="1">
+    
+            <tr>
+                <td>Gabriel</td>
+                <td>9</td>
+            </tr>
+    
+            <tr>
+                <td>Daniel</td>
+                <td>8</td>
+            </tr>
+    
+            <tr>
+                <td>Pablo</td>
+                <td>2</td>
+            </tr>
+    
+            <tr>
+                <td>Oliver</td>
+                <td>8</td>
+            </tr>
+        </table>
+
+</body>
+
+</html>

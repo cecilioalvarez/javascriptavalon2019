@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+
+function copiar(){
+
+if(document.getElementById('texto').value.length <= 0){
+
+alert('Tienes que escribir algo')
+
+} else {
+
+    document.getElementById('texto2').value = document.getElementById('texto').value ;
+}
+
+}
+
+</script>
+
+<body id="cuerpo">
+
+<input id="texto" type="text" placeholder="Escribe algo"/>
+<input id="texto2" type="text" readonly/>
+
+<input type="button" value="Copiar" onclick="copiar()">
+</body>
+</html>
