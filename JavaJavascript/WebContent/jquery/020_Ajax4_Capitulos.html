@@ -33,18 +33,103 @@
 <script type="text/javascript">
 	$(document).ready(
 			function() {
-				
+			
+				//1) Cargamos los libros en el body
 				$.get("../ListaLibros.jsp?", function(datos){
 					
-					console.log(datos);
+					//alert(datos);
 					$("body").append(datos);
-					
-					//$("table").append("<tr><td>"+nombre+"</td><td>"+edad+"</td></tr>")
-					
-				});
+					//Añadirmos una tabla al body
+					//La tabla se crea en ListaLibros.jsp donde se obtienen los datos
+			
 				
+			
+				
+				
+				//2)Recojemos el Libro de la tr donde se haga click
+				$("tr").click(function() {
+					
+					
+					var titulo;
+					var autor;
+					var paginas;
+					
+					$(this).find("td").each(function( index ) {
+						  console.log( index + ": " + $( this ).text() );
+						 
+						  switch (index) {
+						case 0:
+						    titulo = $(this).eq(0).text();
+							console.log(index+ ": " +titulo);
+							break;
+
+						case 1:
+						    autor = $(this).eq(0).text();
+						    console.log(index+ ": " +autor);
+							break;
+							
+						case 2:
+						    paginas = $(this).eq(0).text();
+						    console.log(index+ ": " +paginas);
+							break;
+						default:
+							console.log("index: default")
+							break;
+						}
+						});
+						
+				
+					console.log(titulo+" "+ autor+" "+paginas);
+					
+				//3)Llamada ajax para obtener los capitulos
+			var promesa =$.get("../MostrarCapitulosLibro.jsp?titulo="
+						+titulo+"&autor="+autor+"&paginas="+paginas);
+
+					console.log(promesa);
+					
+					
+					//CUANDO LA PROMESA FINALIZA
+			promesa.then(function(datos){
+							
+			
+					console.log("llega promesa:",datos);
+
+				
+					var datos2 =datos.trim();
+					//var datos =JSON.stringify(datos);
+					console.log("datos.trim():",datos2);
+					
+					// datos = JSON.parse(datos[0].trim());
+						var datos3 = datos2.split("[");
+						var datos4 = datos3[1].split("]");
+						console.log("datos3[1]:",datos4[1]);
+
+						datos5 = datos4[0].split("},{");
+						console.log("datos5:",datos5);
+						
+						
+           		console.log("datos4[1]:",datos5[1]);
+           		
+					for (var i = 0; i < datos5.length; i++) {
+						$("body")
+								.append(
+										"<p>" + datos[i].titulo
+												+ ", "
+												+ datos[i].paginas
+												+ "</p>");
+					}
+
 
 			
+				
+			})
+			
+					
+					
+				})
+				
+				})
+				
 			})
 			
 </script>
@@ -57,41 +142,10 @@
 
 
 
-<!-- 	$("#ajax").click( -->
-<!-- 						function() { -->
 							
-<!-- 							var promesa =$.get("../ListaLibros4.jsp"); -->
-
-<!-- 							console.log(promesa); -->
-							
-							
-<!-- 							//CUANDO LA PROMESA FINALIZA -->
-<!-- 					promesa.then(function(datos){ -->
-									
-
-<!-- 							console.log(datos); -->
-
-<!-- 							var datos = JSON.parse(datos.trim()); -->
-
-<!-- 							console.log(datos); -->
-
-<!-- 							for (var i = 0; i < datos.length; i++) { -->
-<!-- 								$("body") -->
-<!-- 										.append( -->
-<!-- 												"<p>" + datos[i].titulo -->
-<!-- 														+ ", " -->
-<!-- 														+ datos[i].autor -->
-<!-- 														+ ", " -->
-<!-- 														+ datos[i].paginas -->
-<!-- 														+ "</p>"); -->
-<!-- 							} -->
-
-		
 					
-						
-<!-- 					}) -->
 					
 		
 					
 
-<!-- 						}) -->
+				
