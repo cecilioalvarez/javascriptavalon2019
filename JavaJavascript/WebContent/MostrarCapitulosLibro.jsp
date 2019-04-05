@@ -16,24 +16,25 @@
 <%
 
 String titulo = request.getParameter("titulo");
-String autor = request.getParameter("autor");
-int paginas = Integer.parseInt(request.getParameter("paginas"));
+//String autor = request.getParameter("autor");
+//int paginas = Integer.parseInt(request.getParameter("paginas"));
 
 
-Libro libro = new Libro(titulo,autor,paginas);
-//out.println(numero1+numero2);
-
+Libro libro = new Libro(titulo);
+System.out.println(titulo);
 
 CapituloRepositorioJPA repo = new CapituloRepositorioJPA();
 List<Capitulo> lista= new ArrayList<Capitulo>();
-if (lista != null) {
+
 lista =repo.buscarTodosParaUnLibro(libro);
-	
+//System.out.println(lista.length());
 Gson gson = new Gson();
-//out.println(gson.toJson(lista));
-Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-out.println(prettyGson.toJson(lista));
+out.println(gson.toJson(lista));
 
 
-}%>
+//Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+//out.println(prettyGson.toJson(lista));
+
+
+%>
 

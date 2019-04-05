@@ -1,78 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.List"%>
+<%@page import="es.avalon.jpa.negocio.Libro"%>
+<%@page import="es.avalon.repositorios.LibroRepositorioJPA"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-
 <style type="text/css">
-.verde {
-	color: green;
-	front-size: 20px;
-	padding: 10px;
-}
-
-.rosa {
-	color: red;
-	front-size: 20px;
-	padding: 10px;
-}
-
-.azul {
-	color: blue;
-	front-size: 20px;
-	padding: 10px;
-}
-
-.seleccionada {
-	background-color: pink;
-}
 </style>
-
 <title>Insert title here</title>
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
-
+<script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-
-		//me carga las dos listas a la vez, dando a un boton
+$(document).ready(function() {
 	
-		$("#ajax").click(function() {
+	$("p").mouseenter(function() {
+		
+		var texto=$(this).text();
+		var datos= texto.split(",");
+		console.log(datos[0]);
+		$.get("MostrarCapitulosLibro.jsp?titulo="+datos[0],function(resultado){
 			
 			
-			$.get("../ListaLibros4.jsp", function(datos){
+				var lista=JSON.parse(resultado.trim());
 				
-				console.log(datos);
 				
-				var datos = JSON.parse(datos.trim());
-			
-				console.log(datos);
+				$("#detalle").empty();
 				
-				for(var i =0; i<datos.length; i++){
-				$("body").append("<p>"+datos[i].titulo+", "+datos[i].autor+", "+datos[i].paginas+"</p>");
-					}
+				if(lista.length > 0){
+				$("#detalle").append("<h2>Capitulos</h2>");
+					
+				
+				lista.forEach((capitulo)=> {	
+					$("#detalle").append(`<p>\${capitulo.titulo} \${capitulo.paginas}</p>`);
 				})
-				
-				
-			$.get("../ListaLibros5.jsp", function(datos){
-				
-				console.log(datos);
-				
-				var datos = JSON.parse(datos.trim());
 			
-				console.log(datos);
-				
-				for(var i =0; i<datos.length; i++){
-				$("body").append("<p>"+datos[i].titulo+", "+datos[i].autor+", "+datos[i].paginas+"</p>");
-					}
-				})
-				
-			})
-				
-
+				}
 		})
-			
-
+	});
+	
+});
 </script>
+
 </head>
 <body>
+<h2>Libros</h2>
+<%
+	LibroRepositorioJPA repo= new LibroRepositorioJPA();
+	List<Libro> lista= repo.buscarTodos();
+	for (Libro l:lista) { %>
+		
+	<p><%=l.getTitulo()%>,
+	<%=l.getAutor()%>,
+	<%=l.getPaginas()%></p>
+		
+		
+<%	}
+	
+%>
+<div id="detalle">
+
+</div>
+
+</body>
+</html>

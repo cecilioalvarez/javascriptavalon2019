@@ -48,42 +48,20 @@
 				
 				//2)Recojemos el Libro de la tr donde se haga click
 				$("tr").click(function() {
-					
-					
-					var titulo;
-					var autor;
-					var paginas;
-					
+				
 					$(this).find("td").each(function( index ) {
 						  console.log( index + ": " + $( this ).text() );
-						 
-						  switch (index) {
-						case 0:
-						    titulo = $(this).eq(0).text();
-							console.log(index+ ": " +titulo);
-							break;
-
-						case 1:
-						    autor = $(this).eq(0).text();
-						    console.log(index+ ": " +autor);
-							break;
-							
-						case 2:
-						    paginas = $(this).eq(0).text();
-						    console.log(index+ ": " +paginas);
-							break;
-						default:
-							console.log("index: default")
-							break;
-						}
-						});
+						 if(index == 0){
+							 
+						   titulo = $(this).eq(0).text();
+							console.log(index+ "--> " +titulo);
+						 }
 						
-				
-					console.log(titulo+" "+ autor+" "+paginas);
+						});
+			
 					
 				//3)Llamada ajax para obtener los capitulos
-			var promesa =$.get("../MostrarCapitulosLibro.jsp?titulo="
-						+titulo+"&autor="+autor+"&paginas="+paginas);
+			var promesa =$.get("../MostrarCapitulosLibro.jsp?titulo="+titulo);
 
 					console.log(promesa);
 					
@@ -109,22 +87,16 @@
 												+ "</p>");
 					}
 					
-// 					datos.forEach((datos)=>{
-// 						$("#detalle")append(`<p>\${datos.titulo}</p>´);
-// 					})
-
-
-			
 				
 			})
 			
-					
+				})	
 					
 				})
 				
 				})
 				
-			})
+		
 			
 </script>
 </head>

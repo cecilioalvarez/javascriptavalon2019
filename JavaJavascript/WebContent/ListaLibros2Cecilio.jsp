@@ -15,7 +15,52 @@
 
 <script type="text/javascript">
 
+$(document).ready(function(){
+	
+	var titulo;
+
+	$("tr").mouseenter(function(){
+		
+		
+		$(this).find("td").each(function(index){
+			if(index == 0){
+				titulo = $(this).eq(0).text();
+				console.log(titulo);
+			}
+		})
+		
+		
+	$.get("MostrarCapitulosLibro.jsp?titulo="+titulo, function(datos){
+	
+	
+		console.log("llega :",datos);
+
+		datos = JSON.parse(datos.trim());
+	
+		console.log("JSON: ",datos);
+		
+	
+		
+		$("#detalle").empty();
+		
+		for (var i = 0; i < datos.length; i++) {
+			
+			$("#detalle").append("<p>"+datos[i].titulo+" - "+datos[i].paginas+"</p>")
+		}
+		
+		
+
+	})	
+		
+	})
+	
+})
+
+
 </script>
+
+</head>
+<body>
 <%
 LibroRepositorioJPA repo = new LibroRepositorioJPA();
 List<Libro> lista = repo.buscarTodos();
@@ -36,3 +81,9 @@ List<Libro> lista = repo.buscarTodos();
 }
 %>
 </table>
+
+<div id="detalle">
+</div>
+
+</body>
+</html>
